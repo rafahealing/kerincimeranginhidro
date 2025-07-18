@@ -16,3 +16,4 @@ Route::get('/program', function () {
 Route::get('/details/card-a-detail', function () {
     return view('details/card-a-detail');
 })->name('details/card-a-detail');
+

@@ -1,205 +1,287 @@
 <!-- layouts/navbar.html -->
 <template id="navbar-template">
-  <header class="bg-green-900 text-white sticky top-0 z-50 shadow-lg transition-all duration-300 hover:shadow-xl">
-    <div class="container mx-auto px-6 py-3 relative flex justify-between items-center">
-      <!-- Logo -->
-      <a href="index.html" class="flex items-center gap-2 group">
-        <img src="images/logo.png" alt="Logo" class="w-25 h-12 object-contain transition-transform duration-300 group-hover:scale-110">
-      </a>
+  <!-- HEADER -->
+<header class="bg-green-900 text-white sticky top-0 z-50 shadow-lg transition-all duration-300 hover:shadow-xl">
+  <div class="container mx-auto px-6 py-3 relative flex justify-between items-center">
 
-      <!-- Navigation Menu -->
-      <div id="nav-wrapper" class="group relative w-full">
-        <nav class="hidden md:flex justify-center gap-12 text-sm font-medium py-4 px-8">
-          <div class="flex gap-12">
-            <span class="nav-item cursor-pointer font-bold hover:text-yellow-300 transition" data-section="sport">Sport</span>
-            <span class="nav-item cursor-pointer font-bold hover:text-yellow-300 transition" data-section="event">Event</span>
-            <span class="nav-item cursor-pointer font-bold hover:text-yellow-300 transition" data-section="traveling">Traveling</span>
-            <span class="nav-item cursor-pointer font-bold hover:text-yellow-300 transition" data-section="health">Health</span>
-            <span class="nav-item cursor-pointer font-bold hover:text-yellow-300 transition" data-section="csr">CSR</span>
-          </div>
-        </nav>
-      </div>
+    <!-- Logo -->
+    <a href="{{ route('home') }}" class="flex items-center gap-2 group">
+      <img src="/images/logo.png" alt="Logo" class="w-25 h-12 object-contain transition-transform duration-300 group-hover:scale-110">
+    </a>
 
-      <!-- Search Box -->
-      <div class="hidden md:block relative ml-4">
-        <form action="https://www.google.com/search" method="GET" target="_blank" class="relative">
-          <input type="text" name="q" placeholder="Cari di Kami..."
-            class="px-4 py-2 rounded-full text-sm bg-white/90 text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-300 w-48 transition-all duration-300 focus:w-64 shadow-md hover:shadow-lg">
-          <button type="submit" class="absolute right-3 top-1/2 -translate-y-1/2 text-green-800 hover:text-yellow-500 transition-colors duration-300">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14z" />
-            </svg>
-          </button>
-        </form>
-      </div>
-
-      <!-- Mobile Toggle -->
-      <div class="md:hidden">
-        <button id="menuToggle" class="focus:outline-none transition-transform duration-300 hover:scale-110">
-          <svg id="menuIcon" class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-    </div>
-
-    <!-- DROPDOWN FULL SCREEN -->
-    <div id="dropdown" class="absolute left-0 top-full w-screen bg-gradient-to-br from-green-900 via-green-950 to-black text-white shadow-2xl border-t border-green-700/40 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300 z-50">
-      <div id="dropdown-content" class="grid grid-cols-2 md:grid-cols-3 gap-6 py-8 px-10 lg:px-24 text-sm font-medium text-left max-w-screen-xl mx-auto block-center">
-        <!-- konten di-generate dari JS -->
-      </div>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="md:hidden hidden bg-green-800/95 backdrop-blur-sm px-6 pb-4 transform origin-top transition-all duration-300 ease-out">
-      <nav class="flex flex-col gap-3 text-sm font-medium mb-4" id="mobileNav">
-        <button class="mobile-nav-item py-2 border-b border-green-700/50 flex items-center text-left w-full text-white font-semibold" data-section="sport">Sport</button>
-        <div class="mobile-dropdown hidden flex-col pl-6" data-dropdown="sport"></div>
-
-        <button class="mobile-nav-item py-2 border-b border-green-700/50 flex items-center text-left w-full text-white font-semibold" data-section="event">Event</button>
-        <div class="mobile-dropdown hidden flex-col pl-6" data-dropdown="event"></div>
-
-        <button class="mobile-nav-item py-2 border-b border-green-700/50 flex items-center text-left w-full text-white font-semibold" data-section="traveling">Traveling</button>
-        <div class="mobile-dropdown hidden flex-col pl-6" data-dropdown="traveling"></div>
-
-        <button class="mobile-nav-item py-2 border-b border-green-700/50 flex items-center text-left w-full text-white font-semibold" data-section="health">Health</button>
-        <div class="mobile-dropdown hidden flex-col pl-6" data-dropdown="health"></div>
-
-        <button class="mobile-nav-item py-2 border-b border-green-700/50 flex items-center text-left w-full text-white font-semibold" data-section="csr">CSR</button>
-        <div class="mobile-dropdown hidden flex-col pl-6" data-dropdown="csr"></div>
+    <!-- Navigation Menu -->
+    <div id="nav-wrapper" class="group relative w-full">
+      <nav class="md:flex justify-center  gap-12 text-sm font-medium py-4 px-8">
+        <div class="flex gap-12">
+          <span class="nav-item cursor-pointer font-bold hover:text-yellow-300 transition" data-section="sport">Sport</span>
+          <span class="nav-item cursor-pointer font-bold hover:text-yellow-300 transition" data-section="event">Event</span>
+          <span class="nav-item cursor-pointer font-bold hover:text-yellow-300 transition" data-section="traveling">Traveling</span>
+          <span class="nav-item cursor-pointer font-bold hover:text-yellow-300 transition" data-section="health">Health</span>
+          <span class="nav-item cursor-pointer font-bold hover:text-yellow-300 transition" data-section="csr">CSR</span>
+        </div>
       </nav>
+    </div>
 
-      <!-- Mobile Search -->
-      <form action="https://www.google.com/search" method="GET" target="_blank" class="relative mt-4">
+    <!-- Search Box -->
+    <div class="md:block relative ml-4">
+      <form action="https://www.google.com/search" method="GET" target="_blank" class="relative">
         <input type="text" name="q" placeholder="Cari di Kami..."
-          class="w-full px-4 py-2 rounded-full text-sm bg-white/90 text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-300 shadow-md transition-all duration-300">
-        <button type="submit"
-          class="absolute right-3 top-1/2 -translate-y-1/2 text-green-800 hover:text-yellow-500 transition-colors duration-300">
+          class="px-4 py-2 rounded-full text-sm bg-white/90 text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-300 w-48 transition-all duration-300 focus:w-64 shadow-md hover:shadow-lg">
+        <button type="submit" class="absolute right-3 top-1/2 -translate-y-1/2 text-green-800 hover:text-yellow-500 transition-colors duration-300">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14z" />
           </svg>
         </button>
       </form>
     </div>
-  </header>
 
-  <script>
-    // Data dropdown items
-    const dropdownItems = {
-      sport: [
-        { name: "Badminton", href: "#badminton" },
-        { name: "Futsal", href: "futsal.html" },
-        { name: "Basket", href: "#basket" },
-        { name: "Tenis Meja", href: "#tenis-meja" },
-        { name: "Voli Pantai", href: "#voli-pantai" }
-      ],
-      event: [
-        { name: "Coming Soon", href: "#coming-soon" },
-        { name: "Coming Soon", href: "#coming-soon" },
-        { name: "Coming Soon", href: "#coming-soon" }
-      ],
-      traveling: [
-        { name: "Gunung Kerinci", href: "#gunung-kerinci" },
-        { name: "Bukit Tinggi", href: "#bukit-tinggi" },
-        { name: "Air Terjun Telun", href: "#air-terjun" },
-        { name: "Danau Kaco", href: "#danau-kaco" },
-        { name: "Trip Camping", href: "#camping" }
-      ],
-      health: [
-        { name: "Yoga Pagi", href: "#yoga" },
-        { name: "Sit Up Challenge", href: "#situp" },
-        { name: "Senam Sehat", href: "#senam" },
-        { name: "Jalan Pagi", href: "#jalan-pagi" },
-        { name: "Pola Makan Sehat", href: "#makanan-sehat" }
-      ],
-      csr: [
-        { name: "Berbagi Sembako", href: "#sembako" },
-        { name: "Lari Sehat", href: "#lari-sehat" },
-        { name: "Kunjungan Panti", href: "#panti" },
-        { name: "Donasi Buku", href: "#donasi-buku" },
-        { name: "Tanam Pohon", href: "#tanam-pohon" }
-      ]
-    };
+    <!-- Mobile Toggle -->
+    <div class="md:hidden">
+      <button id="menuToggle" class="focus:outline-none transition-transform duration-300 hover:scale-110">
+        <svg id="menuIcon" class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
 
-    // Mobile Menu Toggle
-    document.addEventListener('DOMContentLoaded', function() {
-      const menuToggle = document.getElementById('menuToggle');
-      const mobileMenu = document.getElementById('mobileMenu');
-      
-      if (menuToggle && mobileMenu) {
-        menuToggle.addEventListener('click', function() {
-          mobileMenu.classList.toggle('hidden');
-        });
-      }
 
-      // Desktop Dropdown
-      const dropdown = document.getElementById("dropdown");
-      const content = document.getElementById("dropdown-content");
-      const navItems = document.querySelectorAll(".nav-item");
-      let hideTimeout;
+  <!-- DROPDOWN FULL SCREEN - CINEMATIC DESIGN -->
+  <div id="dropdown" class="absolute left-0 top-full w-screen bg-gradient-to-br from-green-900 via-green-950 to-black text-white shadow-2xl border-t border-green-700/40 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300 z-50">
+    <div id="dropdown-content" class="grid grid-cols-2 md:grid-cols-3 gap-6 py-8 px-10 lg:px-24 text-sm font-medium text-left max-w-screen-xl mx-auto block-center">
+      <!-- konten di-generate dari JS -->
+    </div>
+  </div>
 
-      if (dropdown && content && navItems) {
-        navItems.forEach(item => {
-          item.addEventListener("mouseenter", function() {
-            const section = item.getAttribute("data-section");
-            const items = dropdownItems[section];
 
-            content.innerHTML = items.map(i => `
-              <a href="${i.href}" class="block px-4 py-3 text-center rounded-lg hover:bg-green-800/30 transition flex items-center justify-center gap-2">
-                <span class="w-2 h-2 bg-yellow-300 rounded-full"></span>
-                <span class="text-white group-hover:text-yellow-300">${i.name}</span>
-              </a>
-            `).join("");
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="md:hidden hidden bg-green-800/95 backdrop-blur-sm px-6 pb-4 transform origin-top transition-all duration-300 ease-out">
+    <nav class="flex flex-col gap-3 text-sm font-medium mb-4" id="mobileNav">
+      <!-- Item utama -->
+      <button class="mobile-nav-item py-2 border-b border-green-700/50 flex items-center text-left w-full text-white font-semibold" data-section="sport">Sport</button>
 
-            clearTimeout(hideTimeout);
-            dropdown.classList.remove("opacity-0", "pointer-events-none");
-            dropdown.classList.add("opacity-100");
-          });
+      <div class="mobile-dropdown hidden flex-col pl-6" data-dropdown="sport"></div>
 
-          item.addEventListener("mouseleave", function() {
-            hideDropdownWithDelay();
-          });
-        });
+      <button class="mobile-nav-item py-2 border-b border-green-700/50 flex items-center text-left w-full text-white font-semibold" data-section="event">Event</button>
+      <div class="mobile-dropdown hidden flex-col pl-6" data-dropdown="event"></div>
 
-        dropdown.addEventListener("mouseenter", function() {
-          clearTimeout(hideTimeout);
-        });
+      <button class="mobile-nav-item py-2 border-b border-green-700/50 flex items-center text-left w-full text-white font-semibold" data-section="traveling">Traveling</button>
+      <div class="mobile-dropdown hidden flex-col pl-6" data-dropdown="traveling"></div>
 
-        dropdown.addEventListener("mouseleave", function() {
-          hideDropdownWithDelay();
-        });
+      <button class="mobile-nav-item py-2 border-b border-green-700/50 flex items-center text-left w-full text-white font-semibold" data-section="health">Health</button>
+      <div class="mobile-dropdown hidden flex-col pl-6" data-dropdown="health"></div>
 
-        function hideDropdownWithDelay() {
-          hideTimeout = setTimeout(function() {
-            dropdown.classList.add("opacity-0", "pointer-events-none");
-            dropdown.classList.remove("opacity-100");
-          }, 200);
-        }
-      }
+      <button class="mobile-nav-item py-2 border-b border-green-700/50 flex items-center text-left w-full text-white font-semibold" data-section="csr">CSR</button>
+      <div class="mobile-dropdown hidden flex-col pl-6" data-dropdown="csr"></div>
+    </nav>
 
-      // Mobile Dropdown
-      document.querySelectorAll('.mobile-nav-item').forEach(button => {
-        button.addEventListener('click', function() {
-          const section = this.getAttribute('data-section');
-          const dropdown = document.querySelector(`.mobile-dropdown[data-dropdown="${section}"]`);
-          const items = dropdownItems[section];
+    <!-- Mobile Search -->
+    <form action="" method="GET" class="relative mt-4">
+      <input type="text" name="q" placeholder="Cari di Kami..."
+        class="w-full px-4 py-2 rounded-full text-sm bg-white/90 text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-300 shadow-md transition-all duration-300">
+      <button type="submit"
+        class="absolute right-3 top-1/2 -translate-y-1/2 text-green-800 hover:text-yellow-500 transition-colors duration-300">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14z" />
+        </svg>
+      </button>
+    </form>
+  </div>
 
-          document.querySelectorAll('.mobile-dropdown').forEach(el => {
-            if (el !== dropdown) el.classList.add('hidden');
-          });
-          
-          if (dropdown) {
-            dropdown.classList.toggle('hidden');
-            if (dropdown.innerHTML.trim() === "") {
-              dropdown.innerHTML = items.map(i => `
-                <a href="${i.href}" class="py-1 px-2 text-sm text-white hover:text-yellow-300 transition">${i.name}</a>
-              `).join('');
-            }
-          }
-        });
-      });
+</header>
+
+<!-- SCRIPT: TOGGLE MOBILE MENU -->
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+<!-- SCRIPT: DROPDOWN DYNAMIC -->
+<script>
+  const dropdown = document.getElementById("dropdown");
+  const content = document.getElementById("dropdown-content");
+  const wrapper = document.getElementById("nav-wrapper");
+  const navItems = document.querySelectorAll(".nav-item");
+
+  // DEBUGGING: Tambahkan di sini
+  console.log("Navbar script loaded");
+  console.log(`Found ${navItems.length} nav items`);
+  navItems.forEach((item, index) => {
+    console.log(`[${index}] Attaching events to:`, item.textContent.trim());
+  });
+
+  let hideTimeout;
+
+  navItems.forEach(item => {
+    item.addEventListener("mouseenter", () => {
+      console.log(`Mouse entered: ${item.textContent.trim()}`);
+      const section = item.getAttribute("data-section");
+      const items = dropdownItems[section];
+
+      content.innerHTML = items.map(i => `
+  <a href="${i.href}" class="block px-4 py-3 text-center rounded-lg hover:bg-green-800/30 transition flex items-center justify-center gap-2">
+    <span class="w-2 h-2 bg-yellow-300 rounded-full"></span>
+    <span class="text-white group-hover:text-yellow-300">${i.name}</span>
+  </a>
+`).join("");
+
+
+      clearTimeout(hideTimeout);
+      dropdown.classList.remove("opacity-0", "pointer-events-none");
+      dropdown.classList.add("opacity-100");
     });
-  </script>
+
+    item.addEventListener("mouseleave", () => {
+      console.log(`Mouse left: ${item.textContent.trim()}`);
+      hideDropdownWithDelay();
+    });
+  });
+
+  dropdown.addEventListener("mouseenter", () => {
+    clearTimeout(hideTimeout); // Jangan tutup jika cursor masuk dropdown
+  });
+
+  dropdown.addEventListener("mouseleave", () => {
+    hideDropdownWithDelay();
+  });
+
+  function hideDropdownWithDelay() {
+    console.log("Hiding dropdown with delay");
+    hideTimeout = setTimeout(() => {
+      console.log("Executing dropdown hide");
+      dropdown.classList.add("opacity-0", "pointer-events-none");
+      dropdown.classList.remove("opacity-100");
+    }, 200);
+  }
+</script>
+
+<script>
+  const dropdownItems = {
+    sport: [{
+        name: "Badminton",
+        href: "#badminton"
+      },
+      {
+        name: "Futsal",
+        href: "{{ route('futsal') }}"
+      },
+      {
+        name: "Basket",
+        href: "#basket"
+      },
+      {
+        name: "Tenis Meja",
+        href: "#tenis-meja"
+      },
+      {
+        name: "Voli Pantai",
+        href: "#voli-pantai"
+      }
+    ],
+    event: [{
+        name: "Coming Soon",
+        href: "#coming-soon"
+      },
+      {
+        name: "Coming Soon",
+        href: "#coming-soon"
+      },
+      {
+        name: "Coming Soon",
+        href: "#coming-soon"
+      },
+    ],
+    traveling: [{
+        name: "Gunung Kerinci",
+        href: "#gunung-kerinci"
+      },
+      {
+        name: "Bukit Tinggi",
+        href: "#bukit-tinggi"
+      },
+      {
+        name: "Air Terjun Telun",
+        href: "#air-terjun"
+      },
+      {
+        name: "Danau Kaco",
+        href: "#danau-kaco"
+      },
+      {
+        name: "Trip Camping",
+        href: "#camping"
+      }
+    ],
+    health: [{
+        name: "Yoga Pagi",
+        href: "#yoga"
+      },
+      {
+        name: "Sit Up Challenge",
+        href: "#situp"
+      },
+      {
+        name: "Senam Sehat",
+        href: "#senam"
+      },
+      {
+        name: "Jalan Pagi",
+        href: "#jalan-pagi"
+      },
+      {
+        name: "Pola Makan Sehat",
+        href: "#makanan-sehat"
+      }
+    ],
+    csr: [{
+        name: "Berbagi Sembako",
+        href: "#sembako"
+      },
+      {
+        name: "Lari Sehat",
+        href: "#lari-sehat"
+      },
+      {
+        name: "Kunjungan Panti",
+        href: "#panti"
+      },
+      {
+        name: "Donasi Buku",
+        href: "#donasi-buku"
+      },
+      {
+        name: "Tanam Pohon",
+        href: "#tanam-pohon"
+      }
+    ]
+  };
+
+  document.querySelectorAll('.mobile-nav-item').forEach(button => {
+    button.addEventListener('click', () => {
+      const section = button.getAttribute('data-section');
+      const dropdown = document.querySelector(`.mobile-dropdown[data-dropdown="${section}"]`);
+      const items = dropdownItems[section];
+
+      // Toggle show/hide
+      document.querySelectorAll('.mobile-dropdown').forEach(el => {
+        if (el !== dropdown) el.classList.add('hidden');
+      });
+      dropdown.classList.toggle('hidden');
+
+      // Only generate content if not already generated
+      if (dropdown.innerHTML.trim() === "") {
+        dropdown.innerHTML = items.map(i => `
+          <a href="${i.href}" class="py-1 px-2 text-sm text-white hover:text-yellow-300 transition">${i.name}</a>
+        `).join('');
+      }
+    });
+  });
+</script>
 </template>
 
 <script>

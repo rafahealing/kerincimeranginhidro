@@ -36,9 +36,9 @@ function setupNavbarDropdown() {
       { name: "Voli Pantai", href: "#voli-pantai" }
     ],
     event: [
-      { name: "Coming Soon", href: "#coming-soon" },
-      { name: "Coming Soon", href: "#coming-soon" },
-      { name: "Coming Soon", href: "#coming-soon" }
+      { name: "", href: "#coming-soon" },
+      { name: "KMH Event", href: "event.html" },
+      { name: "", href: "#coming-soon" }
     ],
     traveling: [
       { name: "Gunung Kerinci", href: "#gunung-kerinci" },
@@ -55,11 +55,15 @@ function setupNavbarDropdown() {
       { name: "Pola Makan Sehat", href: "#makanan-sehat" }
     ],
     csr: [
-      { name: "Berbagi Sembako", href: "#sembako" },
-      { name: "Lari Sehat", href: "#lari-sehat" },
-      { name: "Kunjungan Panti", href: "#panti" },
-      { name: "Donasi Buku", href: "#donasi-buku" },
-      { name: "Tanam Pohon", href: "#tanam-pohon" }
+      { name: "Lingkungan dan Kehutanan", href: "lingkungan.html" },
+      { name: "Kewirausahaan", href: "#Kewirausahaan" },
+      { name: "Kesehatan", href: "#Kesehatan" },
+      { name: "Sanitasi & Air Bersih", href: "#sanitasi" },
+      { name: "Sosial & Mitigasi", href: "#sosial" },
+      { name: "Pendidikan", href: "pendidikan" },
+      { name: "Infrastruktur", href: "#infrastruktur" },
+      { name: "Keagamaan", href: "#keagamaan" },
+      { name: "Kepemudaan & Pariwisata", href: "#kepemudaan" },
     ]
   };
 

@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Kami - Portal Acara Terkini</title>
+    <meta name="description" content="Temukan event terbaru dan terbaik untuk Anda. Jelajahi berbagai acara menarik dari berbagai kategori.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Reset dan variabel */
+        :root {
+            --primary-color: #059669;
+            --primary-dark: #047857;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f8f9fa;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--text-dark);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1.25rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.875rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover,
+        .btn:focus {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            background-color: var(--primary-dark);
+        }
+
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            background: linear-gradient(90deg, var(--primary-color) 0%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 3.75rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3.125rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.25rem;
+            color: var(--text-dark);
+            margin-bottom: 0.9375rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -0.625rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 5rem;
+            height: 0.25rem;
+            background-color: var(--primary-color);
+            border-radius: 0.125rem;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: 1.125rem;
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* News Card Styles */
+        .news-card {
+            background-color: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card:hover,
+        .news-card:focus-within {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-0.5rem);
+        }
+
+        .news-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .news-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .relative {
+            position: relative;
+        }
+
+        .absolute {
+            position: absolute;
+        }
+
+        .top-4 {
+            top: 1rem;
+        }
+
+        .left-4 {
+            left: 1rem;
+        }
+
+        .bottom-4 {
+            bottom: 1rem;
+        }
+
+        .date-badge {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(5, 150, 105, 0.3);
+        }
+
+        .category-badge {
+            background-color: white;
+            color: var(--primary-color);
+            padding: 0.4rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            border-radius: 9999px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .location {
+            display: flex;
+            align-items: center;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .location i {
+            margin-right: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .title-button {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            padding: 0;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .title-button h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: color 0.3s ease;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .news-card:hover .title-button h3 {
+            color: var(--primary-color);
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .read-time {
+            display: flex;
+            align-items: center;
+            color: #9ca3af;
+            font-size: 0.8rem;
+        }
+
+        .read-time i {
+            margin-right: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .category-bottom {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .category-bottom .category-badge {
+            margin: 0;
+        }
+
+        /* Filter Styles */
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-button {
+            padding: 0.7rem 1.5rem;
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .filter-button:hover,
+        .filter-button:focus {
+            background-color: #f0fdf4;
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .filter-button.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+        }
+
+        /* Search Styles */
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 50px;
+            padding: 0.5rem 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            padding: 0.8rem 0;
+            width: 100%;
+            font-size: 1rem;
+            margin-left: 0.5rem;
+            background: transparent;
+        }
+
+        .search-box i {
+            color: var(--primary-color);
+        }
+
+        /* No Results Styles */
+        .no-results {
+            text-align: center;
+            grid-column: 1 / -1;
+            padding: 3rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .no-results i {
+            font-size: 3rem;
+            color: #9ca3af;
+            margin-bottom: 1rem;
+        }
+
+        .no-results h3 {
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+
+        .no-results p {
+            color: var(--text-light);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .hero {
+                height: 400px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.125rem;
+            }
+
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .filters {
+                gap: 0.5rem;
+            }
+
+            .filter-button {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.875rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                height: 350px;
+            }
+
+            .hero h1 {
+                font-size: 1.875rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 0.625rem 1.25rem;
+                font-size: 0.9rem;
+            }
+
+            .header {
+                padding: 1.5rem 1rem;
+            }
+
+            .header h1 {
+                font-size: 1.875rem;
+            }
+        }
+
+        /* Accessibility Improvements */
+        button:focus,
+        input:focus,
+        select:focus,
+        a:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary-color);
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+    </style>
+    
+</head>
+
+<body class="bg-gray-50">
+    <!-- Skip link untuk aksesibilitas -->
+    <a href="#main-content" class="skip-link">Langsung ke konten utama</a>
+
+    <!-- Header dengan Tailwind -->
+    <div id="navbar-container"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Bangun Kebersamaan Lewat Event KMH</h1>
+            <p>Setiap acara adalah langkah menuju perubahan yang lebih hijau.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Events Section -->
+        <section id="events">
+            <div class="container">
+                <!-- Title -->
+                <div class="text-center mb-14" data-aos="fade-up">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
+                        Event Terbaru
+                    </h2>
+                    <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+                        Jangan lewatkan event-event menarik yang akan datang.<br> Pastikan kamu jadi bagian dari momen spesial ini.
+                    </p>
+                </div>
+
+                <!-- Search -->
+                <div class="search-container" data-aos="fade-up">
+                    <div class="search-box">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                        <input type="text" id="search-input" placeholder="Cari event atau acara..." aria-label="Cari event">
+                    </div>
+                </div>
+
+                <!-- Filters -->
+                <div class="filters" data-aos="fade-up" data-aos-delay="100">
+                    <button class="filter-button active" data-filter="all">Semua Kategori</button>
+                    <button class="filter-button" data-filter="musik">Musik</button>
+                    <button class="filter-button" data-filter="teknologi">Teknologi</button>
+                    <button class="filter-button" data-filter="olahraga">Olahraga</button>
+                    <button class="filter-button" data-filter="seni">Seni & Budaya</button>
+                    <button class="filter-button" data-filter="bisnis">Bisnis</button>
+                </div>
+
+                <!-- Events Grid -->
+                <div class="grid" id="news-container">
+                    <!-- News Card 1 -->
+                    <div class="news-card" data-aos="fade-up" data-aos-delay="100"
+                        data-category="musik"
+                        data-location="jakarta"
+                        data-date="2023-10-15">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Java Jazz Festival 2023" loading="lazy">
+                            <div class="absolute top-4 left-4 date-badge">
+                                15 Okt 2023
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                <span>Jakarta Convention Center</span>
+                            </div>
+                            <button class="title-button">
+                                <h3>Java Jazz Festival 2023: Festival Jazz Terbesar di Asia Kembali Digelar</h3>
+                            </button>
+                            <div class="card-footer">
+                                <div class="read-time">
+                                    <i class="far fa-clock" aria-hidden="true"></i>
+                                    <span>5 min read</span>
+                                </div>
+                            </div>
+                            <div class="category-bottom">
+                                <span class="category-badge">Musik</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- News Card 2 -->
+                    <div class="news-card" data-aos="fade-up" data-aos-delay="150"
+                        data-category="teknologi"
+                        data-location="tangerang"
+                        data-date="2023-11-22">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1510525009512-ad7fc13eefab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Tech Summit Indonesia" loading="lazy">
+                            <div class="absolute top-4 left-4 date-badge">
+                                22 Nov 2023
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                <span>BSD City, Tangerang</span>
+                            </div>
+                            <button class="title-button">
+                                <h3>Tech Summit Indonesia 2023: Inovasi Terbaru dalam Dunia Teknologi</h3>
+                            </button>
+                            <div class="card-footer">
+                                <div class="read-time">
+                                    <i class="far fa-clock" aria-hidden="true"></i>
+                                    <span>7 min read</span>
+                                </div>
+                            </div>
+                            <div class="category-bottom">
+                                <span class="category-badge">Teknologi</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- News Card 3 -->
+                    <div class="news-card" data-aos="fade-up" data-aos-delay="200"
+                        data-category="olahraga"
+                        data-location="jakarta"
+                        data-date="2023-12-05">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Jakarta Marathon 2023" loading="lazy">
+                            <div class="absolute top-4 left-4 date-badge">
+                                5 Des 2023
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                <span>Monas, Jakarta</span>
+                            </div>
+                            <button class="title-button">
+                                <h3>Jakarta Marathon 2023: Ribuan Pelari Akan Berpartisipasi</h3>
+                            </button>
+                            <div class="card-footer">
+                                <div class="read-time">
+                                    <i class="far fa-clock" aria-hidden="true"></i>
+                                    <span>4 min read</span>
+                                </div>
+                            </div>
+                            <div class="category-bottom">
+                                <span class="category-badge">Olahraga</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- News Card 4 -->
+                    <div class="news-card" data-aos="fade-up" data-aos-delay="250"
+                        data-category="seni"
+                        data-location="yogyakarta"
+                        data-date="2023-09-20">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1568515387631-8b650bbcdb90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Art Jog 2023" loading="lazy">
+                            <div class="absolute top-4 left-4 date-badge">
+                                20 Sep 2023
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                <span>Jogja National Museum, Yogyakarta</span>
+                            </div>
+                            <button class="title-button">
+                                <h3>Art Jog 2023: Pameran Seni Kontemporer Terbesar di Indonesia</h3>
+                            </button>
+                            <div class="card-footer">
+                                <div class="read-time">
+                                    <i class="far fa-clock" aria-hidden="true"></i>
+                                    <span>6 min read</span>
+                                </div>
+                            </div>
+                            <div class="category-bottom">
+                                <span class="category-badge">Seni & Budaya</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- News Card 5 -->
+                    <div class="news-card" data-aos="fade-up" data-aos-delay="300"
+                        data-category="bisnis"
+                        data-location="jakarta"
+                        data-date="2023-10-08">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1553484771-11998c592b9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Indonesia Business Forum" loading="lazy">
+                            <div class="absolute top-4 left-4 date-badge">
+                                8 Okt 2023
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                <span>Jakarta Convention Center</span>
+                            </div>
+                            <button class="title-button">
+                                <h3>Indonesia Business Forum 2023: Membangun Ekosistem Bisnis Digital</h3>
+                            </button>
+                            <div class="card-footer">
+                                <div class="read-time">
+                                    <i class="far fa-clock" aria-hidden="true"></i>
+                                    <span>8 min read</span>
+                                </div>
+                            </div>
+                            <div class="category-bottom">
+                                <span class="category-badge">Bisnis</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- News Card 6 -->
+                    <div class="news-card" data-aos="fade-up" data-aos-delay="350"
+                        data-category="musik"
+                        data-location="bali"
+                        data-date="2023-11-12">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Bali Music Festival" loading="lazy">
+                            <div class="absolute top-4 left-4 date-badge">
+                                12 Nov 2023
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                <span>Garuda Wisnu Kencana, Bali</span>
+                            </div>
+                            <button class="title-button">
+                                <h3>Bali Music Festival 2023: Perpaduan Musik Tradisional dan Modern</h3>
+                            </button>
+                            <div class="card-footer">
+                                <div class="read-time">
+                                    <i class="far fa-clock" aria-hidden="true"></i>
+                                    <span>5 min read</span>
+                                </div>
+                            </div>
+                            <div class="category-bottom">
+                                <span class="category-badge">Musik</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+    <script src="main.js"></script>
+
+    <!-- Script untuk AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Inisialisasi AOS
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                offset: 100
+            });
+
+            // Filter functionality
+            const filterButtons = document.querySelectorAll('.filter-button');
+            const newsCards = document.querySelectorAll('.news-card');
+            const searchInput = document.getElementById('search-input');
+
+            // Filter by category
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+
+                    // Add active class to clicked button
+                    button.classList.add('active');
+
+                    const filter = button.getAttribute('data-filter');
+                    filterNews(filter);
+                });
+
+                // Add keyboard navigation
+                button.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        button.click();
+                    }
+                });
+            });
+
+            // Search functionality
+            searchInput.addEventListener('input', () => {
+                const searchTerm = searchInput.value.toLowerCase();
+                const activeFilter = document.querySelector('.filter-button.active').getAttribute('data-filter');
+                filterNews(activeFilter, searchTerm);
+            });
+
+            function filterNews(category, searchTerm = '') {
+                let hasResults = false;
+
+                newsCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    const title = card.querySelector('.title-button h3').textContent.toLowerCase();
+                    const location = card.querySelector('.location span').textContent.toLowerCase();
+                    const date = card.querySelector('.date-badge').textContent.toLowerCase();
+
+                    const matchesCategory = category === 'all' || cardCategory === category;
+                    const matchesSearch = searchTerm === '' ||
+                        title.includes(searchTerm) ||
+                        location.includes(searchTerm) ||
+                        date.includes(searchTerm);
+
+                    if (matchesCategory && matchesSearch) {
+                        card.style.display = 'block';
+                        hasResults = true;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Show no results message if needed
+                let noResults = document.getElementById('no-results');
+                if (!hasResults) {
+                    if (!noResults) {
+                        noResults = document.createElement('div');
+                        noResults.id = 'no-results';
+                        noResults.className = 'no-results';
+                        noResults.setAttribute('aria-live', 'polite');
+                        noResults.innerHTML = `
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                            <h3>Tidak ada hasil ditemukan</h3>
+                            <p>Coba gunakan kata kunci lain atau filter yang berbeda</p>
+                        `;
+                        document.getElementById('news-container').appendChild(noResults);
+                    }
+                } else if (noResults) {
+                    noResults.remove();
+                }
+            }
+
+            // Smooth scroll untuk tombol jelajahi event
+            document.querySelector('.btn[href="#events"]')?.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+
+            // Add click event to title buttons
+            const titleButtons = document.querySelectorAll('.title-button');
+            titleButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // In a real implementation, this would navigate to the article page
+                    const title = button.querySelector('h3').textContent;
+                    alert(`Akan membuka berita: ${title}`);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

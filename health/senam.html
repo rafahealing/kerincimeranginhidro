@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Senam Sehat KMH - PT Kerinci Merangin Hidro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#16a34a',
+            secondary: '#15803d',
+            accent: '#22c55e',
+            light: '#f0fdf4',
+            dark: '#14532d'
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .hero-bg {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .benefit-card {
+      transition: transform 0.3s ease;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .gallery-item {
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    .countdown-number {
+      min-width: 60px;
+    }
+
+    /* Animasi */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    /* Navigation */
+    .navbar {
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar.scrolled {
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar.scrolled .nav-link {
+      color: #4b5563;
+    }
+
+    .navbar.scrolled .nav-link:hover {
+      color: #16a34a;
+    }
+  </style>
+</head>
+
+<body class="font-sans text-gray-800 bg-gray-50">
+
+  <!-- Navigation Bar -->
+  <div id="navbar-container"></div>
+
+  <!-- Hero Section -->
+  <section class="hero-bg min-h-screen flex items-center justify-center text-center text-white pt-20">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl mx-auto animate-fade-in">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">Senam Sehat KMH</h1>
+        <p class="text-xl md:text-2xl mb-8">Gerakan Sehat, Semangat Baru Bersama PT Kerinci Merangin Hidro</p>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+          <a href="#daftar" class="bg-primary hover:bg-secondary text-white px-8 py-3 rounded-lg font-medium text-lg transition shadow-lg">
+            Daftar Sekarang
+          </a>
+          <a href="#tentang" class="bg-white hover:bg-gray-100 text-primary px-8 py-3 rounded-lg font-medium text-lg transition shadow-lg">
+            Pelajari Lebih Lanjut
+          </a>
+        </div>
+
+        <!-- Countdown to Next Session -->
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 max-w-xl mx-auto">
+          <h3 class="text-xl font-semibold mb-4">Senam Selanjutnya</h3>
+          <div class="flex justify-center space-x-4">
+            <div class="flex flex-col items-center">
+              <div class="countdown-number bg-primary text-white text-2xl font-bold rounded-lg py-2 px-3">00</div>
+              <span class="text-sm mt-1">Hari</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <div class="countdown-number bg-primary text-white text-2xl font-bold rounded-lg py-2 px-3">00</div>
+              <span class="text-sm mt-1">Jam</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <div class="countdown-number bg-primary text-white text-2xl font-bold rounded-lg py-2 px-3">00</div>
+              <span class="text-sm mt-1">Menit</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <div class="countdown-number bg-primary text-white text-2xl font-bold rounded-lg py-2 px-3">00</div>
+              <span class="text-sm mt-1">Detik</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#tentang" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <i class="fas fa-chevron-down text-3xl text-white"></i>
+    </a>
+  </section>
+
+  <!-- Tentang Section -->
+  <section id="tentang" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="w-full md:w-1/2">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80"
+            alt="Senam Bersama" class="rounded-2xl shadow-xl">
+        </div>
+
+        <div class="w-full md:w-1/2">
+          <h2 class="text-3xl font-bold mb-6 text-dark">Tentang Senam Sehat KMH</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            <strong>Senam Sehat KMH</strong> adalah program rutin yang digagas oleh PT Kerinci Merangin Hidro sebagai bagian dari komitmen perusahaan
+            dalam meningkatkan kualitas hidup sehat bagi karyawan dan masyarakat sekitar.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            Kegiatan ini tidak hanya berfokus pada kesehatan jasmani, tetapi juga mempererat kebersamaan, membangun semangat positif,
+            dan menciptakan gaya hidup yang lebih aktif. Setiap minggu, ratusan peserta berkumpul untuk berolahraga bersama dengan instruktur profesional.
+          </p>
+
+          <div class="grid grid-cols-2 gap-6">
+            <div class="flex items-center">
+              <div class="bg-light p-3 rounded-full mr-4">
+                <i class="fas fa-users text-primary text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">500+ Peserta</h4>
+                <p class="text-sm text-gray-500">Setiap Minggu</p>
+              </div>
+            </div>
+
+            <div class="flex items-center">
+              <div class="bg-light p-3 rounded-full mr-4">
+                <i class="fas fa-calendar-check text-primary text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">50+ Session</h4>
+                <p class="text-sm text-gray-500">Telah Terselenggara</p>
+              </div>
+            </div>
+
+            <div class="flex items-center">
+              <div class="bg-light p-3 rounded-full mr-4">
+                <i class="fas fa-user-md text-primary text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">Instruktur Profesional</h4>
+                <p class="text-sm text-gray-500">Bersertifikat</p>
+              </div>
+            </div>
+
+            <div class="flex items-center">
+              <div class="bg-light p-3 rounded-full mr-4">
+                <i class="fas fa-music text-primary text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">Music Seru</h4>
+                <p class="text-sm text-gray-500">Pengiring Semangat</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Manfaat Section -->
+  <section id="manfaat" class="py-20 bg-light">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-4 text-dark">Manfaat Senam Sehat</h2>
+      <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">Bergabung dengan Senam Sehat KMH memberikan banyak manfaat bagi kesehatan fisik dan mental Anda</p>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="benefit-card bg-white rounded-2xl p-6 shadow-lg">
+          <div class="bg-primary/10 p-3 rounded-xl inline-block mb-4">
+            <i class="fas fa-running text-primary text-2xl"></i>
+          </div>
+          <h3 class="font-bold text-xl text-dark mb-3">Sehat Jasmani</h3>
+          <p class="text-gray-600">Meningkatkan kebugaran tubuh, memperkuat otot, melancarkan peredaran darah, dan meningkatkan sistem kekebalan tubuh.</p>
+        </div>
+
+        <div class="benefit-card bg-white rounded-2xl p-6 shadow-lg">
+          <div class="bg-primary/10 p-3 rounded-xl inline-block mb-4">
+            <i class="fas fa-heart text-primary text-2xl"></i>
+          </div>
+          <h3 class="font-bold text-xl text-dark mb-3">Kesehatan Mental</h3>
+          <p class="text-gray-600">Mengurangi stres, meningkatkan mood, dan menciptakan pikiran positif melalui gerakan dan interaksi sosial.</p>
+        </div>
+
+        <div class="benefit-card bg-white rounded-2xl p-6 shadow-lg">
+          <div class="bg-primary/10 p-3 rounded-xl inline-block mb-4">
+            <i class="fas fa-hands-helping text-primary text-2xl"></i>
+          </div>
+          <h3 class="font-bold text-xl text-dark mb-3">Semangat Bersama</h3>
+          <p class="text-gray-600">Mempererat tali persaudaraan antara karyawan dan masyarakat sekitar KMH, membangun komunitas yang solid.</p>
+        </div>
+
+        <div class="benefit-card bg-white rounded-2xl p-6 shadow-lg">
+          <div class="bg-primary/10 p-3 rounded-xl inline-block mb-4">
+            <i class="fas fa-brain text-primary text-2xl"></i>
+          </div>
+          <h3 class="font-bold text-xl text-dark mb-3">Peningkatan Fokus</h3>
+          <p class="text-gray-600">Meningkatkan konsentrasi dan kualitas tidur, sehingga produktivitas dalam pekerjaan meningkat.</p>
+        </div>
+
+        <div class="benefit-card bg-white rounded-2xl p-6 shadow-lg">
+          <div class="bg-primary/10 p-3 rounded-xl inline-block mb-4">
+            <i class="fas fa-weight text-primary text-2xl"></i>
+          </div>
+          <h3 class="font-bold text-xl text-dark mb-3">Kontrol Berat Badan</h3>
+          <p class="text-gray-600">Membantu menjaga berat badan ideal, meningkatkan metabolisme, dan membentuk postur tubuh yang lebih baik.</p>
+        </div>
+
+        <div class="benefit-card bg-white rounded-2xl p-6 shadow-lg">
+          <div class="bg-primary/10 p-3 rounded-xl inline-block mb-4">
+            <i class="fas fa-smile text-primary text-2xl"></i>
+          </div>
+          <h3 class="font-bold text-xl text-dark mb-3">Kebahagiaan</h3>
+          <p class="text-gray-600">Aktivitas fisik teratur melepaskan endorfin yang membuat perasaan lebih bahagia dan kehidupan lebih berkualitas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Jadwal Section -->
+  <section id="jadwal" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-4 text-dark">Jadwal Kegiatan</h2>
+      <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">Senam Sehat KMH dilakukan secara rutin dengan jadwal berikut</p>
+
+      <div class="max-w-4xl mx-auto bg-light rounded-2xl p-8 shadow-lg">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-10">
+          <div class="flex items-center">
+            <div class="bg-primary p-3 rounded-xl mr-4">
+              <i class="fas fa-calendar-alt text-white text-2xl"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg">Setiap Jumat</h3>
+              <p class="text-gray-600">07:00 - 08:00 WIB</p>
+            </div>
+          </div>
+
+          <div class="flex items-center">
+            <div class="bg-primary p-3 rounded-xl mr-4">
+              <i class="fas fa-map-marker-alt text-white text-2xl"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg">Lapangan Utama PT KMH</h3>
+              <p class="text-gray-600">Jl. Raya Kerinci No. 123</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 mb-8">
+          <h3 class="font-bold text-lg mb-4">Aktivitas Senam</h3>
+          <div class="space-y-4">
+            <div class="flex justify-between items-center border-b pb-3">
+              <div class="flex items-center">
+                <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                  <span class="text-primary font-bold">1</span>
+                </div>
+                <span>Pemanasan</span>
+              </div>
+              <span class="text-gray-500">15 menit</span>
+            </div>
+
+            <div class="flex justify-between items-center border-b pb-3">
+              <div class="flex items-center">
+                <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                  <span class="text-primary font-bold">2</span>
+                </div>
+                <span>Senam Inti</span>
+              </div>
+              <span class="text-gray-500">30 menit</span>
+            </div>
+
+            <div class="flex justify-between items-center border-b pb-3">
+              <div class="flex items-center">
+                <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                  <span class="text-primary font-bold">3</span>
+                </div>
+                <span>Pendinginan</span>
+              </div>
+              <span class="text-gray-500">15 menit</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl p-6">
+          <h3 class="font-bold text-lg mb-4">Peserta</h3>
+          <p class="text-gray-600 mb-4">Terbuka untuk semua karyawan PT KMH dan masyarakat umum. Gratis!</p>
+
+          <div class="flex items-center">
+            <div class="w-3 h-3 rounded-full bg-primary mr-2"></div>
+            <span>Usia minimal 15 tahun</span>
+          </div>
+          <div class="flex items-center my-2">
+            <div class="w-3 h-3 rounded-full bg-primary mr-2"></div>
+            <span>Dianjurkan untuk berkonsultasi dengan dokter jika memiliki kondisi kesehatan tertentu</span>
+          </div>
+          <div class="flex items-center">
+            <div class="w-3 h-3 rounded-full bg-primary mr-2"></div>
+            <span>Dipersiapkan matras atau handuk pribadi</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instruktur Section -->
+  <section class="py-20 bg-light">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-4 text-dark">Instruktur Profesional</h2>
+      <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">Dibimbing oleh instruktur bersertifikat dan berpengalaman</p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg">
+          <img src="https://images.unsplash.com/photo-1567013127544-8b569a9f6ec1?auto=format&fit=crop&w=600&q=80"
+            alt="Instruktur Senam" class="w-full h-64 object-cover">
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-1">Dewi Sartika, S.Pd</h3>
+            <p class="text-primary mb-3">Instruktur Senam Senior</p>
+            <p class="text-gray-600">Bersertifikat nasional dengan pengalaman mengajar senam selama 10 tahun.</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg">
+          <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=600&q=80"
+            alt="Instruktur Senam" class="w-full h-64 object-cover">
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-1">Budi Santoso, S.Ft</h3>
+            <p class="text-primary mb-3">Ahli Fisioterapi</p>
+            <p class="text-gray-600">Spesialis senam untuk pemula dan lansia, fokus pada gerakan aman dan sehat.</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg">
+          <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80"
+            alt="Instruktur Senam" class="w-full h-64 object-cover">
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-1">Rina Wijaya, M.Fis</h3>
+            <p class="text-primary mb-3">Master Trainer</p>
+            <p class="text-gray-600">Pemegang sertifikat internasional dengan spesialisasi senam aerobik dan zumba.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeri Section -->
+  <section id="galeri" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-4 text-dark">Galeri Senam Sehat</h2>
+      <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">Momen seru dan semangat bersama Senam Sehat KMH</p>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div class="gallery-item rounded-xl overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&fit=crop&w=800&q=80"
+            class="w-full h-48 object-cover">
+        </div>
+        <div class="gallery-item rounded-xl overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80"
+            class="w-full h-48 object-cover">
+        </div>
+        <div class="gallery-item rounded-xl overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1549576490-b0b4831ef60a?auto=format&fit=crop&w=800&q=80"
+            class="w-full h-48 object-cover">
+        </div>
+        <div class="gallery-item rounded-xl overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1534258936925-c58bed479fcb?auto=format&fit=crop&w=800&q=80"
+            class="w-full h-48 object-cover">
+        </div>
+        <div class="gallery-item rounded-xl overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80"
+            class="w-full h-48 object-cover">
+        </div>
+        <div class="gallery-item rounded-xl overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80"
+            class="w-full h-48 object-cover">
+        </div>
+        <div class="gallery-item rounded-xl overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1518458028785-8fbcd101ebb9?auto=format&fit=crop&w=800&q=80"
+            class="w-full h-48 object-cover">
+        </div>
+        <div class="gallery-item rounded-xl overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1517344884509-a0c97ec11bcc?auto=format&fit=crop&w=800&q=80"
+            class="w-full h-48 object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FAQ Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-4 text-dark">Pertanyaan Umum</h2>
+      <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">Beberapa pertanyaan yang sering diajukan tentang Senam Sehat KMH</p>
+
+      <div class="max-w-3xl mx-auto space-y-4">
+        <div class="bg-light rounded-xl p-5">
+          <button class="flex justify-between items-center w-full text-left font-semibold">
+            <span>Apakah ada biaya untuk mengikuti senam?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <p class="mt-3 text-gray-600 hidden">Tidak, Senam Sehat KMH sepenuhnya gratis untuk semua peserta, baik karyawan PT KMH maupun masyarakat umum.</p>
+        </div>
+
+        <div class="bg-light rounded-xl p-5">
+          <button class="flex justify-between items-center w-full text-left font-semibold">
+            <span>Apa yang harus saya bawa untuk senam?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <p class="mt-3 text-gray-600 hidden">Disarankan membawa matras atau handuk pribadi, air minum, dan mengenakan pakaian yang nyaman untuk bergerak.</p>
+        </div>
+
+        <div class="bg-light rounded-xl p-5">
+          <button class="flex justify-between items-center w-full text-left font-semibold">
+            <span>Bagaimana jika saya pemula dan tidak terbiasa senam?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <p class="mt-3 text-gray-600 hidden">Tidak perlu khawatir, instruktur kami akan memberikan panduan sesuai level peserta. Gerakan dapat dimodifikasi sesuai kemampuan.</p>
+        </div>
+
+        <div class="bg-light rounded-xl p-5">
+          <button class="flex justify-between items-center w-full text-left font-semibold">
+            <span>Apakah senam tetap dilaksanakan saat hujan?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <p class="mt-3 text-gray-600 hidden">Jika hujan ringan, senam tetap dilaksanakan. Jika hujan deras, senam akan dibatalkan dan pemberitahuan akan disampaikan melalui media sosial.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+
+  <script src="main.js"></script>
+
+  <script>
+    // Navigation scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Countdown timer
+    function updateCountdown() {
+      const now = new Date();
+      let nextFriday = new Date();
+
+      // Set to next Friday 7:00 AM
+      nextFriday.setDate(now.getDate() + (5 + 7 - now.getDay()) % 7);
+      nextFriday.setHours(7, 0, 0, 0);
+
+      // If it's already past this Friday, set to next week
+      if (now > nextFriday) {
+        nextFriday.setDate(nextFriday.getDate() + 7);
+      }
+
+      const diff = nextFriday - now;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.querySelectorAll('.countdown-number')[0].textContent = days.toString().padStart(2, '0');
+      document.querySelectorAll('.countdown-number')[1].textContent = hours.toString().padStart(2, '0');
+      document.querySelectorAll('.countdown-number')[2].textContent = minutes.toString().padStart(2, '0');
+      document.querySelectorAll('.countdown-number')[3].textContent = seconds.toString().padStart(2, '0');
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // FAQ toggle
+    document.querySelectorAll('.bg-light button').forEach(button => {
+      button.addEventListener('click', () => {
+        const answer = button.nextElementSibling;
+        answer.classList.toggle('hidden');
+        const icon = button.querySelector('i');
+        icon.classList.toggle('fa-chevron-down');
+        icon.classList.toggle('fa-chevron-up');
+      });
+    });
+  </script>
+</body>
+
+</html>

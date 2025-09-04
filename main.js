@@ -30,7 +30,7 @@ function setupNavbarDropdown() {
   const dropdownItems = {
     sport: [
       { name: "Badminton", href: "#badminton" },
-      { name: "Futsal", href: "futsal.html" },
+      { name: "Futsal", href: "sport/futsal.html" },
       { name: "Basket", href: "#basket" },
       { name: "Tenis Meja", href: "#tenis-meja" },
       { name: "Voli Pantai", href: "#voli-pantai" }
@@ -41,7 +41,7 @@ function setupNavbarDropdown() {
       { name: "", href: "#coming-soon" }
     ],
     traveling: [
-      { name: "Gunung Kerinci", href: "#gunung-kerinci" },
+      { name: "Gunung Kerinci", href: "traveling/gunung-kerinci.html" },
       { name: "Bukit Tinggi", href: "#bukit-tinggi" },
       { name: "Air Terjun Telun", href: "#air-terjun" },
       { name: "Danau Kaco", href: "#danau-kaco" },
@@ -50,12 +50,12 @@ function setupNavbarDropdown() {
     health: [
       { name: "Yoga Pagi", href: "#yoga" },
       { name: "Sit Up Challenge", href: "#situp" },
-      { name: "Senam Sehat", href: "#senam" },
+      { name: "Senam Sehat", href: "health/senam.html" },
       { name: "Jalan Pagi", href: "#jalan-pagi" },
       { name: "Pola Makan Sehat", href: "#makanan-sehat" }
     ],
     csr: [
-      { name: "Lingkungan dan Kehutanan", href: "lingkungan.html" },
+      { name: "Lingkungan dan Kehutanan", href: "csr/lingkungan.html" },
       { name: "Kewirausahaan", href: "#Kewirausahaan" },
       { name: "Kesehatan", href: "#Kesehatan" },
       { name: "Sanitasi & Air Bersih", href: "#sanitasi" },

@@ -30,7 +30,7 @@ function setupNavbarDropdown() {
   const dropdownItems = {
     sport: [
       { name: "Badminton", href: "#badminton" },
-      { name: "Futsal", href: "sport/futsal.html" },
+      { name: "Futsal", href: "/sport/futsal.html" },
       { name: "Basket", href: "#basket" },
       { name: "Tenis Meja", href: "#tenis-meja" },
       { name: "Voli Pantai", href: "#voli-pantai" }
@@ -50,12 +50,12 @@ function setupNavbarDropdown() {
     health: [
       { name: "Yoga Pagi", href: "#yoga" },
       { name: "Sit Up Challenge", href: "#situp" },
-      { name: "Senam Sehat", href: "health/senam.html" },
+      { name: "Senam Sehat", href: "/health/senam.html" },
       { name: "Jalan Pagi", href: "#jalan-pagi" },
       { name: "Pola Makan Sehat", href: "#makanan-sehat" }
     ],
     csr: [
-      { name: "Lingkungan dan Kehutanan", href: "csr/lingkungan.html" },
+      { name: "Lingkungan dan Kehutanan", href: "/csr/lingkungan.html" },
       { name: "Kewirausahaan", href: "#Kewirausahaan" },
       { name: "Kesehatan", href: "#Kesehatan" },
       { name: "Sanitasi & Air Bersih", href: "#sanitasi" },
@@ -143,6 +143,50 @@ function setupNavbarDropdown() {
     });
   }
 }
+
+function loadComponent(component, targetId) {
+  // cek apakah sekarang lagi di folder child (traveling, health, csr, dll)
+  const isInSubfolder = window.location.pathname.includes("/traveling/") ||
+                      window.location.pathname.includes("/health/") ||
+                      window.location.pathname.includes("/csr/") ||
+                      window.location.pathname.includes("/sport/");
+
+
+  // tentukan base path
+  const basePath = isInSubfolder ? "../layouts/" : "./layouts/";
+
+  console.log("Memuat:", basePath + component + ".html");
+
+  fetch(basePath + `${component}.html`)
+    .then(res => res.text())
+    .then(html => {
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = html;
+
+      const template = tempDiv.querySelector('template');
+      if (template) {
+        document.getElementById(targetId).innerHTML = template.innerHTML;
+      } else {
+        document.getElementById(targetId).innerHTML = html;
+      }
+
+      // Eksekusi semua <script> di komponen
+      tempDiv.querySelectorAll('script').forEach(script => {
+        const newScript = document.createElement('script');
+        if (script.src) newScript.src = script.src;
+        else newScript.text = script.textContent;
+        document.body.appendChild(newScript);
+      });
+
+      // --- Khusus navbar ---
+      if (component === 'navbar') {
+        setupNavbarDropdown();
+      }
+    })
+    .catch(err => console.error("Gagal load component:", component, err));
+}
+
+
 
 window.onload = function() {
   loadComponent('navbar', 'navbar-container');

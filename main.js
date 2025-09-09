@@ -1,111 +1,85 @@
-function loadComponent(component, targetId) {
-  fetch(`layouts/${component}.html`)
-    .then(res => res.text())
-    .then(html => {
-      const tempDiv = document.createElement('div');
-      tempDiv.innerHTML = html;
-      const template = tempDiv.querySelector('template');
-      if (template) {
-        document.getElementById(targetId).innerHTML = template.innerHTML;
-      } else {
-        document.getElementById(targetId).innerHTML = html;
-      }
-      // Eksekusi semua <script> di komponen
-      tempDiv.querySelectorAll('script').forEach(script => {
-        const newScript = document.createElement('script');
-        if (script.src) newScript.src = script.src;
-        else newScript.text = script.textContent;
-        document.body.appendChild(newScript);
-      });
-
-      // --- Tambahkan ini khusus untuk navbar ---
-      if (component === 'navbar') {
-        setupNavbarDropdown();
-      }
-    });
-}
-
+// ===============================
+// Navbar Dropdown Setup
+// ===============================
 function setupNavbarDropdown() {
-  // Data dropdown items
   const dropdownItems = {
     sport: [
-      { name: "Badminton", href: "#badminton" },
+      { name: "Badminton", href: "/sport/badminton.html" },
       { name: "Futsal", href: "/sport/futsal.html" },
-      { name: "Basket", href: "#basket" },
-      { name: "Tenis Meja", href: "#tenis-meja" },
-      { name: "Voli Pantai", href: "#voli-pantai" }
+      { name: "Basket", href: "/sport/basket.html" },
+      { name: "Tennis Meja", href: "/sport/tennis-meja.html" },
+      { name: "Voli Pantai", href: "/sport/voli.html" },
+      { name: "Mobile Legends", href: "/sport/mobile-legends.html" },
     ],
     event: [
       { name: "", href: "#coming-soon" },
       { name: "KMH Event", href: "event.html" },
-      { name: "", href: "#coming-soon" }
+      { name: "", href: "#coming-soon" },
     ],
     traveling: [
       { name: "Gunung Kerinci", href: "traveling/gunung-kerinci.html" },
       { name: "Bukit Tinggi", href: "#bukit-tinggi" },
       { name: "Air Terjun Telun", href: "#air-terjun" },
       { name: "Danau Kaco", href: "#danau-kaco" },
-      { name: "Trip Camping", href: "#camping" }
+      { name: "Trip Camping", href: "#camping" },
     ],
     health: [
       { name: "Yoga Pagi", href: "#yoga" },
       { name: "Sit Up Challenge", href: "#situp" },
       { name: "Senam Sehat", href: "/health/senam.html" },
       { name: "Jalan Pagi", href: "#jalan-pagi" },
-      { name: "Pola Makan Sehat", href: "#makanan-sehat" }
+      { name: "Pola Makan Sehat", href: "#makanan-sehat" },
     ],
     csr: [
       { name: "Lingkungan dan Kehutanan", href: "/csr/lingkungan.html" },
-      { name: "Kewirausahaan", href: "#Kewirausahaan" },
-      { name: "Kesehatan", href: "#Kesehatan" },
-      { name: "Sanitasi & Air Bersih", href: "#sanitasi" },
-      { name: "Sosial & Mitigasi", href: "#sosial" },
-      { name: "Pendidikan", href: "pendidikan" },
-      { name: "Infrastruktur", href: "#infrastruktur" },
-      { name: "Keagamaan", href: "#keagamaan" },
-      { name: "Kepemudaan & Pariwisata", href: "#kepemudaan" },
-    ]
+      { name: "Kewirausahaan", href: "/csr/Kewirausahaan.html" },
+      { name: "Kesehatan", href: "/csr/Kesehatan.html" },
+      { name: "Sanitasi & Air Bersih", href: "/csr/sanitasi.html" },
+      { name: "Sosial & Mitigasi", href: "/csr/sosial.html" },
+      { name: "Pendidikan", href: "/csr/pendidikan.html" },
+      { name: "Infrastruktur", href: "/csr/infrastruktur.html" },
+      { name: "Keagamaan", href: "/csr/keagamaan.html" },
+      { name: "Kepemudaan & Pariwisata", href: "/csr/kepemudaan.html" },
+    ],
   };
 
-  // Desktop Dropdown
   const dropdown = document.getElementById("dropdown");
   const content = document.getElementById("dropdown-content");
   const navItems = document.querySelectorAll(".nav-item");
   let hideTimeout;
 
   if (dropdown && content && navItems) {
-    navItems.forEach(item => {
-      item.addEventListener("mouseenter", function() {
+    navItems.forEach((item) => {
+      item.addEventListener("mouseenter", function () {
         const section = item.getAttribute("data-section");
         const items = dropdownItems[section];
 
-        content.innerHTML = items.map(i => `
+        content.innerHTML = items
+          .map(
+            (i) => `
           <a href="${i.href}" class="block px-4 py-3 text-center rounded-lg hover:bg-green-800/30 transition flex items-center justify-center gap-2">
             <span class="w-2 h-2 bg-yellow-300 rounded-full"></span>
             <span class="text-white group-hover:text-yellow-300">${i.name}</span>
           </a>
-        `).join("");
+        `
+          )
+          .join("");
 
         clearTimeout(hideTimeout);
         dropdown.classList.remove("opacity-0", "pointer-events-none");
         dropdown.classList.add("opacity-100");
       });
 
-      item.addEventListener("mouseleave", function() {
-        hideDropdownWithDelay();
-      });
+      item.addEventListener("mouseleave", hideDropdownWithDelay);
     });
 
-    dropdown.addEventListener("mouseenter", function() {
-      clearTimeout(hideTimeout);
-    });
-
-    dropdown.addEventListener("mouseleave", function() {
-      hideDropdownWithDelay();
-    });
+    dropdown.addEventListener("mouseenter", () =>
+      clearTimeout(hideTimeout)
+    );
+    dropdown.addEventListener("mouseleave", hideDropdownWithDelay);
 
     function hideDropdownWithDelay() {
-      hideTimeout = setTimeout(function() {
+      hideTimeout = setTimeout(() => {
         dropdown.classList.add("opacity-0", "pointer-events-none");
         dropdown.classList.remove("opacity-100");
       }, 200);
@@ -113,82 +87,141 @@ function setupNavbarDropdown() {
   }
 
   // Mobile Dropdown
-  document.querySelectorAll('.mobile-nav-item').forEach(button => {
-    button.addEventListener('click', function() {
-      const section = this.getAttribute('data-section');
-      const dropdown = document.querySelector(`.mobile-dropdown[data-dropdown="${section}"]`);
+  document.querySelectorAll(".mobile-nav-item").forEach((button) => {
+    button.addEventListener("click", function () {
+      const section = this.getAttribute("data-section");
+      const dropdown = document.querySelector(
+        `.mobile-dropdown[data-dropdown="${section}"]`
+      );
       const items = dropdownItems[section];
 
-      document.querySelectorAll('.mobile-dropdown').forEach(el => {
-        if (el !== dropdown) el.classList.add('hidden');
+      document.querySelectorAll(".mobile-dropdown").forEach((el) => {
+        if (el !== dropdown) el.classList.add("hidden");
       });
-      
+
       if (dropdown) {
-        dropdown.classList.toggle('hidden');
+        dropdown.classList.toggle("hidden");
         if (dropdown.innerHTML.trim() === "") {
-          dropdown.innerHTML = items.map(i => `
+          dropdown.innerHTML = items
+            .map(
+              (i) => `
             <a href="${i.href}" class="py-1 px-2 text-sm text-white hover:text-yellow-300 transition">${i.name}</a>
-          `).join('');
+          `
+            )
+            .join("");
         }
       }
     });
   });
 
   // Mobile Menu Toggle
-  const menuToggle = document.getElementById('menuToggle');
-  const mobileMenu = document.getElementById('mobileMenu');
+  const menuToggle = document.getElementById("menuToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
   if (menuToggle && mobileMenu) {
-    menuToggle.addEventListener('click', function() {
-      mobileMenu.classList.toggle('hidden');
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
     });
   }
 }
 
+// ===============================
+// Modal Setup (pakai .active)
+// ===============================
+document.addEventListener("DOMContentLoaded", () => {
+  const triggers = document.querySelectorAll("[id$='ModalTrigger']");
+  const modals = document.querySelectorAll(".modal");
+  const closeButtons = document.querySelectorAll(".close-btn");
+
+  // buka modal
+  triggers.forEach(trigger => {
+    trigger.addEventListener("click", e => {
+      e.preventDefault();
+      const modalId = trigger.id.replace("Trigger", "");
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.add("active");
+        document.body.classList.add("modal-open");
+      }
+    });
+  });
+
+  // tutup modal
+  closeButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const modalId = btn.getAttribute("data-modal");
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.remove("active");
+        document.body.classList.remove("modal-open");
+      }
+    });
+  });
+
+  // klik luar modal
+  modals.forEach(modal => {
+    modal.addEventListener("click", e => {
+      if (e.target === modal) {
+        modal.classList.remove("active");
+        document.body.classList.remove("modal-open");
+      }
+    });
+  });
+
+  // tombol Escape
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") {
+      modals.forEach(modal => {
+        if (modal.classList.contains("active")) {
+          modal.classList.remove("active");
+          document.body.classList.remove("modal-open");
+        }
+      });
+    }
+  });
+});
+
+// ===============================
+// Load Component (Navbar / Footer)
+// ===============================
 function loadComponent(component, targetId) {
-  // cek apakah sekarang lagi di folder child (traveling, health, csr, dll)
-  const isInSubfolder = window.location.pathname.includes("/traveling/") ||
-                      window.location.pathname.includes("/health/") ||
-                      window.location.pathname.includes("/csr/") ||
-                      window.location.pathname.includes("/sport/");
-
-
-  // tentukan base path
+  const isInSubfolder =
+    window.location.pathname.includes("/traveling/") ||
+    window.location.pathname.includes("/health/") ||
+    window.location.pathname.includes("/csr/") ||
+    window.location.pathname.includes("/sport/");
   const basePath = isInSubfolder ? "../layouts/" : "./layouts/";
 
-  console.log("Memuat:", basePath + component + ".html");
-
   fetch(basePath + `${component}.html`)
-    .then(res => res.text())
-    .then(html => {
-      const tempDiv = document.createElement('div');
+    .then((res) => res.text())
+    .then((html) => {
+      const tempDiv = document.createElement("div");
       tempDiv.innerHTML = html;
 
-      const template = tempDiv.querySelector('template');
+      const template = tempDiv.querySelector("template");
       if (template) {
         document.getElementById(targetId).innerHTML = template.innerHTML;
       } else {
         document.getElementById(targetId).innerHTML = html;
       }
 
-      // Eksekusi semua <script> di komponen
-      tempDiv.querySelectorAll('script').forEach(script => {
-        const newScript = document.createElement('script');
+      // Eksekusi semua <script> dalam komponen
+      tempDiv.querySelectorAll("script").forEach((script) => {
+        const newScript = document.createElement("script");
         if (script.src) newScript.src = script.src;
         else newScript.text = script.textContent;
         document.body.appendChild(newScript);
       });
 
-      // --- Khusus navbar ---
-      if (component === 'navbar') {
-        setupNavbarDropdown();
-      }
+      // fungsi khusus
+      if (component === "navbar") setupNavbarDropdown();
     })
-    .catch(err => console.error("Gagal load component:", component, err));
+    .catch((err) => console.error("Gagal load component:", component, err));
 }
 
-
-
-window.onload = function() {
-  loadComponent('navbar', 'navbar-container');
-  loadComponent('footer', 'footer-container');
+// ===============================
+// Initial Load
+// ===============================
+window.onload = function () {
+  loadComponent("navbar", "navbar-container");
+  loadComponent("footer", "footer-container");
 };

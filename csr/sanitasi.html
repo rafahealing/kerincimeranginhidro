@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSR Sanitasi & Air Bersih | Kerinci Merangin Hidro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              '50': '#f0fdf4',
+              '100': '#dcfce7',
+              '200': '#bbf7d0',
+              '300': '#86efac',
+              '400': '#4ade80',
+              '500': '#22c55e',
+              '600': '#16a34a',
+              '700': '#15803d',
+              '800': '#166534',
+              '900': '#14532d'
+            },
+          },
+          backgroundImage: {
+            'water-pattern': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0C13.431 0 0 13.431 0 30s13.431 30 30 30 30-13.431 30-30S46.569 0 30 0zm0 54C16.745 54 6 43.255 6 30S16.745 6 30 6s24 10.745 24 24-10.745 24-24 24z' fill='%234ade80' fill-opacity='0.1'/%3E%3Cpath d='M30 12c-9.941 0-18 8.059-18 18s8.059 18 18 18 18-8.059 18-18-8.059-18-18-18zm0 30c-6.627 0-12-5.373-12-12s5.373-12 12-12 12 5.373 12 12-5.373 12-12 12z' fill='%2322c55e' fill-opacity='0.1'/%3E%3C/svg%3E\")"
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom,
+          #16a34a 0%,
+          #15803d 25%,
+          #166534 50%,
+          #14532d 75%,
+          #052e16 100%
+        );
+      min-height: 100vh;
+      margin: 0;
+      background-attachment: fixed;
+    }
+  </style>
+
+  <style>
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .snap-start {
+      scroll-snap-align: start;
+    }
+  </style>
+  
+</head>
+
+<body class="bg-green-50 text-gray-800" style="font-family: Poppins, sans-serif;">
+  <div id="navbar-container"></div>
+  <!-- Floating 3D elements (water-themed) -->
+  <div class="water-drop" style="top:10%;left:5%;animation-delay:0s;"></div>
+  <div class="water-drop" style="top:70%;left:80%;animation-delay:2s;"></div>
+  <div class="water-drop" style="top:30%;left:60%;animation-delay:4s;"></div>
+
+  <!-- HEADER -->
+  <header class="bg-gradient-to-r from-green-800 to-green-700 text-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-4 py-6">
+      <h1 class="text-3xl font-bold text-center">CSR Sanitasi & Air Bersih</h1>
+      <p class="text-green-100 mt-2 text-center">Komitmen kami untuk menyediakan akses air bersih dan sanitasi yang layak bagi masyarakat untuk meningkatkan kualitas hidup.</p>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="bg-gradient-to-br from-green-600 to-green-800 text-white py-14">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 mb-8 md:mb-0">
+        <h2 class="text-3xl font-bold mb-4">Akses Sanitasi & Air Bersih untuk Semua</h2>
+        <p class="text-green-100 mb-6">PT Kerinci Merangin Hidro berkomitmen untuk meningkatkan akses air bersih dan sanitasi yang layak melalui program CSR yang berkelanjutan, mendukung kesehatan masyarakat, dan menjaga lingkungan.</p>
+      </div>
+      <div class="md:w-1/2">
+        <img src="https://images.unsplash.com/photo-1413752362258-7af2a667b590?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+          alt="Sanitasi & Air Bersih" class="w-full rounded-lg shadow-xl">
+      </div>
+    </div>
+  </section>
+
+  <!-- VISI MISI -->
+  <section class="bg-green-800 text-white py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-green-900 p-6 rounded-lg shadow-lg">
+          <h2 class="text-2xl font-bold mb-4 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Visi Sanitasi & Air Bersih
+          </h2>
+          <p class="text-green-100">Menjamin akses air bersih dan sanitasi yang layak bagi setiap komunitas untuk mendukung kesehatan dan keberlanjutan lingkungan.</p>
+        </div>
+        <div class="bg-green-900 p-6 rounded-lg shadow-lg">
+          <h2 class="text-2xl font-bold mb-4 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+            </svg>
+            Misi Sanitasi & Air Bersih
+          </h2>
+          <ul class="text-green-100 space-y-2">
+            <li class="flex items-start"><span class="mr-2">•</span> Membangun infrastruktur air bersih yang berkelanjutan</li>
+            <li class="flex items-start"><span class="mr-2">•</span> Meningkatkan kesadaran masyarakat tentang sanitasi</li>
+            <li class="flex items-start"><span class="mr-2">•</span> Menyediakan fasilitas sanitasi yang layak</li>
+            <li class="flex items-start"><span class="mr-2">•</span> Mengurangi risiko penyakit berbasis air</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTEN UTAMA -->
+  <main class="max-w-6xl mx-auto px-4 pt-12 pb-12" id="program">
+    <!-- Program Unggulan -->
+    <section class="pt-12 pb-16 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-yellow-300 mb-4">Program Unggulan Kami</h2>
+          <div class="w-20 h-1 bg-green-600 mx-auto mb-6"></div>
+        </div>
+
+        <!-- Container with Navigation Buttons -->
+        <div class="relative">
+          <!-- Navigation Buttons -->
+          <button id="prevBtn" class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 z-10 w-10 h-10 items-center justify-center rounded-full bg-white shadow-lg hover:bg-green-50 text-green-600 transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          <button id="nextBtn" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 z-10 w-10 h-10 items-center justify-center rounded-full bg-white shadow-lg hover:bg-green-50 text-green-600 transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          <!-- Card Container -->
+          <div id="cardContainer" class="grid grid-flow-col auto-cols-[85%] md:auto-cols-[45%] lg:auto-cols-[30%] gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-8 px-2 scrollbar-hide">
+            <!-- Card 1 -->
+            <div class="snap-start">
+              <button onclick="openModal('air_bersih')" class="w-full group text-left bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2 focus:outline-none">
+                <div class="aspect-w-16 aspect-h-10 relative">
+                  <img class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                    src="https://images.unsplash.com/photo-1413752362258-7af2a667b590?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                    alt="Penyediaan Air Bersih">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <span class="absolute top-4 right-4 bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                    Berjalan
+                  </span>
+                </div>
+                <div class="p-6">
+                  <div class="mb-3">
+                    <span class="text-green-600 text-sm font-medium">2023-2025</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight">Penyediaan Air Bersih</h3>
+                  <p class="text-gray-600 mb-5 leading-relaxed">
+                    Pembangunan sumur dan sistem distribusi air bersih untuk masyarakat.
+                  </p>
+                </div>
+              </button>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="snap-start">
+              <button onclick="openModal('sanitasi')" class="w-full group text-left bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2 focus:outline-none">
+                <div class="aspect-w-16 aspect-h-10 relative">
+                  <img class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    alt="Fasilitas Sanitasi">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <span class="absolute top-4 right-4 bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                    Jangka Panjang
+                  </span>
+                </div>
+                <div class="p-6">
+                  <div class="mb-3">
+                    <span class="text-green-600 text-sm font-medium">Sejak 2020</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight">Fasilitas Sanitasi</h3>
+                  <p class="text-gray-600 mb-5 leading-relaxed">
+                    Pembangunan toilet umum dan sistem pengelolaan limbah.
+                  </p>
+                </div>
+              </button>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="snap-start">
+              <button onclick="openModal('edukasi_sanitasi')" class="w-full group text-left bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2 focus:outline-none">
+                <div class="aspect-w-16 aspect-h-10 relative">
+                  <img class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                    src="https://images.unsplash.com/photo-1583324113626-70df0f4deaab?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    alt="Edukasi Sanitasi">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <span class="absolute top-4 right-4 bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                    Rutin
+                  </span>
+                </div>
+                <div class="p-6">
+                  <div class="mb-3">
+                    <span class="text-green-600 text-sm font-medium">Setiap Bulan</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight">Edukasi Sanitasi</h3>
+                  <p class="text-gray-600 mb-5 leading-relaxed">
+                    Kampanye kesadaran sanitasi dan kebersihan lingkungan.
+                  </p>
+                </div>
+              </button>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="snap-start">
+              <button onclick="openModal('pengelolaan_limbah')" class="w-full group text-left bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2 focus:outline-none">
+                <div class="aspect-w-16 aspect-h-10 relative">
+                  <img class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                    src="https://images.unsplash.com/photo-1413752362258-7af2a667b590?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                    alt="Pengelolaan Limbah">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <span class="absolute top-4 right-4 bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                    Berjalan
+                  </span>
+                </div>
+                <div class="p-6">
+                  <div class="mb-3">
+                    <span class="text-green-600 text-sm font-medium">2022-2024</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight">Pengelolaan Limbah</h3>
+                  <p class="text-gray-600 mb-5 leading-relaxed">
+                    Sistem pengelolaan limbah domestik untuk lingkungan yang bersih.
+                  </p>
+                </div>
+              </button>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="snap-start">
+              <button onclick="openModal('sumur_bor')" class="w-full group text-left bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2 focus:outline-none">
+                <div class="aspect-w-16 aspect-h-10 relative">
+                  <img class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    alt="Sumur Bor">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <span class="absolute top-4 right-4 bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                    Pilot Project
+                  </span>
+                </div>
+                <div class="p-6">
+                  <div class="mb-3">
+                    <span class="text-green-600 text-sm font-medium">2023-Sekarang</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight">Pembangunan Sumur Bor</h3>
+                  <p class="text-gray-600 mb-5 leading-relaxed">
+                    Penyediaan sumur bor untuk akses air bersih di desa-desa terpencil.
+                  </p>
+                </div>
+              </button>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="snap-start">
+              <button onclick="openModal('teknologi_air')" class="w-full group text-left bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2 focus:outline-none">
+                <div class="aspect-w-16 aspect-h-10 relative">
+                  <img class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                    src="https://images.unsplash.com/photo-1413752362258-7af2a667b590?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                    alt="Teknologi Air Bersih">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <span class="absolute top-4 right-4 bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                    Rencana
+                  </span>
+                </div>
+                <div class="p-6">
+                  <div class="mb-3">
+                    <span class="text-green-600 text-sm font-medium">2024-2026</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight">Teknologi Air Bersih</h3>
+                  <p class="text-gray-600 mb-5 leading-relaxed">
+                    Implementasi teknologi penyaringan air untuk desa-desa.
+                  </p>
+                </div>
+              </button>
+            </div>
+          </div> <!-- End cardContainer -->
+        </div> <!-- End relative container -->
+      </div> <!-- End max-w-7xl -->
+    </section>
+
+    <!-- Galeri Foto -->
+    <section class="pb-16 pt-20 rounded-xl shadow-md">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl font-bold text-yellow-300 mb-3">Aksi Nyata Untuk Sanitasi & Air Bersih</h2>
+          <div class="w-16 h-1 bg-green-600 mx-auto mb-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Item 1 - Penyediaan Air Bersih -->
+          <div class="group relative block overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-green-100 cursor-pointer" onclick="showLightbox('https://images.unsplash.com/photo-1593113598332-fce4f2ca06b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+            <div class="aspect-w-4 aspect-h-3">
+              <img src="https://images.unsplash.com/photo-1413752362258-7af2a667b590?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                alt="Penyediaan air bersih"
+                class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-green-900/70 via-transparent to-transparent flex items-end p-5">
+              <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <span class="inline-block px-3 py-1 bg-green-600 text-white text-xs font-medium rounded-full mb-2">2023</span>
+                <h3 class="text-xl font-semibold text-white">Penyediaan Air Bersih</h3>
+                <p class="text-green-100 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Pembangunan sumur untuk 500 warga
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 - Fasilitas Sanitasi -->
+          <div class="group relative block overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-green-100 cursor-pointer" onclick="showLightbox('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+            <div class="aspect-w-4 aspect-h-3">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Fasilitas sanitasi"
+                class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-green-900/70 via-transparent to-transparent flex items-end p-5">
+              <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <span class="inline-block px-3 py-1 bg-green-600 text-white text-xs font-medium rounded-full mb-2">2023</span>
+                <h3 class="text-xl font-semibold text-white">Fasilitas Sanitasi</h3>
+                <p class="text-green-100 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Pembangunan 10 toilet umum di desa binaan
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 - Edukasi Sanitasi -->
+          <div class="group relative block overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-green-100 cursor-pointer" onclick="showLightbox('https://images.unsplash.com/photo-1583324113626-70df0f4deaab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+            <div class="aspect-w-4 aspect-h-3">
+              <img src="https://images.unsplash.com/photo-1583324113626-70df0f4deaab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Edukasi sanitasi"
+                class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-green-900/70 via-transparent to-transparent flex items-end p-5">
+              <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <span class="inline-block px-3 py-1 bg-green-600 text-white text-xs font-medium rounded-full mb-2">2024</span>
+                <h3 class="text-xl font-semibold text-white">Edukasi Sanitasi</h3>
+                <p class="text-green-100 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Kampanye untuk 300 warga tentang kebersihan
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4 - Pengelolaan Limbah -->
+          <div class="group relative block overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-green-100 cursor-pointer" onclick="showLightbox('https://images.unsplash.com/photo-1580281658626-523a0b25dd3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+            <div class="aspect-w-4 aspect-h-3">
+              <img src="https://images.unsplash.com/photo-1413752362258-7af2a667b590?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                alt="Pengelolaan limbah"
+                class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-green-900/70 via-transparent to-transparent flex items-end p-5">
+              <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <span class="inline-block px-3 py-1 bg-green-600 text-white text-xs font-medium rounded-full mb-2">2024</span>
+                <h3 class="text-xl font-semibold text-white">Pengelolaan Limbah</h3>
+                <p class="text-green-100 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Sistem pengelolaan limbah untuk 5 desa
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox Element -->
+    <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden items-center justify-center">
+      <div class="relative max-w-4xl w-full">
+        <button onclick="hideLightbox()" class="absolute -top-12 right-0 text-white hover:text-gray-300">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <img id="lightbox-img" src="" alt="" class="w-full max-h-[90vh] object-contain">
+        <p id="lightbox-caption" class="text-white text-center mt-2"></p>
+      </div>
+    </div>
+
+    <!-- Pencapaian -->
+    <section class="mt-16 mb-1 py-7 bg-green-700 text-white p-8 rounded-xl">
+      <h2 class="text-2xl font-bold mb-6 text-center">Pencapaian Kami</h2>
+      <div class="grid md:grid-cols-4 gap-6 text-center">
+        <div class="bg-green-800 p-4 rounded-lg">
+          <div class="text-4xl font-bold mb-2">2,000+</div>
+          <div class="text-green-200">Warga Terlayani Air Bersih</div>
+        </div>
+        <div class="bg-green-800 p-4 rounded-lg">
+          <div class="text-4xl font-bold mb-2">15</div>
+          <div class="text-green-200">Toilet Umum Dibangun</div>
+        </div>
+        <div class="bg-green-800 p-4 rounded-lg">
+          <div class="text-4xl font-bold mb-2">10+</div>
+          <div class="text-green-200">Desa Terlibat</div>
+        </div>
+        <div class="bg-green-800 p-4 rounded-lg">
+          <div class="text-4xl font-bold mb-2">500</div>
+          <div class="text-green-200">Peserta Edukasi Sanitasi</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Structure -->
+    <div id="modalOverlay" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4">
+      <div id="modalContainer" class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto hidden">
+        <div class="p-6">
+          <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <div id="modalContent"></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+  <div id="footer-container"></div>
+  <script src="../main.js"></script>
+
+  <script>
+    // Data untuk modal
+    const programData = {
+      air_bersih: {
+        title: "Penyediaan Air Bersih",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>`,
+        description: "Pembangunan sumur dan sistem distribusi air bersih untuk masyarakat di wilayah operasional perusahaan.",
+        content: `
+          <p class="mb-4">Program penyediaan air bersih kami bertujuan untuk memastikan akses air bersih bagi masyarakat di desa-desa terpencil. Kami telah membangun 10 sumur dan sistem distribusi air di 5 desa binaan.</p>
+          <p class="mb-4">Kami bekerja sama dengan ahli hidrologi untuk memastikan kualitas air memenuhi standar kesehatan. Program ini juga melibatkan masyarakat lokal dalam pemeliharaan infrastruktur untuk keberlanjutan.</p>
+          <p class="mb-4">Hingga saat ini, lebih dari 2.000 warga telah mendapatkan akses air bersih, mengurangi risiko penyakit berbasis air sebesar 40%. Kami juga menyediakan pelatihan pengelolaan air untuk komunitas.</p>
+          <p class="mb-4">Ke depan, kami berencana untuk memperluas program ini dengan membangun sistem air bersih berbasis energi terbarukan di 5 desa tambahan.</p>
+        `,
+        achievements: [
+          "2.000 warga terlayani",
+          "10 sumur dibangun",
+          "Pengurangan penyakit air 40%",
+          "Pelatihan pengelolaan air"
+        ],
+        image: "https://images.unsplash.com/photo-1593113598332-fce4f2ca06b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        status: "Berjalan",
+        period: "2023-2025"
+      },
+      sanitasi: {
+        title: "Fasilitas Sanitasi",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+          </svg>`,
+        description: "Pembangunan toilet umum dan sistem pengelolaan limbah untuk meningkatkan sanitasi lingkungan.",
+        content: `
+          <p class="mb-4">Program fasilitas sanitasi kami fokus pada pembangunan toilet umum dan sistem pengelolaan limbah domestik untuk meningkatkan kebersihan lingkungan di desa-desa binaan.</p>
+          <p class="mb-4">Kami telah membangun 15 toilet umum di 10 desa, lengkap dengan sistem septik tank yang ramah lingkungan. Program ini juga mencakup pelatihan pemeliharaan fasilitas untuk masyarakat.</p>
+          <p class="mb-4">Kami bekerja sama dengan Dinas Pekerjaan Umum untuk memastikan standar konstruksi yang aman dan berkelanjutan. Hasilnya, tingkat sanitasi layak meningkat 50% di desa-desa binaan.</p>
+          <p class="mb-4">Ke depan, kami berencana untuk membangun 10 toilet umum tambahan dan memperkenalkan teknologi biofilter untuk pengelolaan limbah.</p>
+        `,
+        achievements: [
+          "15 toilet umum dibangun",
+          "10 desa terlibat",
+          "Peningkatan sanitasi 50%",
+          "Pelatihan pemeliharaan fasilitas"
+        ],
+        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        status: "Jangka Panjang",
+        period: "Sejak 2020"
+      },
+      edukasi_sanitasi: {
+        title: "Edukasi Sanitasi",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          </svg>`,
+        description: "Kampanye kesadaran sanitasi dan kebersihan lingkungan untuk masyarakat lokal.",
+        content: `
+          <p class="mb-4">Program edukasi sanitasi kami bertujuan untuk meningkatkan kesadaran masyarakat tentang pentingnya kebersihan lingkungan dan praktik sanitasi yang baik.</p>
+          <p class="mb-4">Kami telah menyelenggarakan workshop dan kampanye untuk 500 warga di 10 desa, dengan fokus pada kebiasaan mencuci tangan, pengelolaan sampah, dan penggunaan toilet yang higienis.</p>
+          <p class="mb-4">Program ini bekerja sama dengan Dinas Kesehatan untuk menyusun materi edukasi yang relevan. Hasilnya, 70% peserta menunjukkan perubahan perilaku positif terhadap sanitasi.</p>
+          <p class="mb-4">Ke depan, kami berencana untuk memperluas program ini dengan melibatkan sekolah-sekolah lokal untuk mengedukasi anak-anak tentang sanitasi sejak dini.</p>
+        `,
+        achievements: [
+          "500 warga teredukasi",
+          "70% perubahan perilaku",
+          "Kampanye di 10 desa",
+          "Kerja sama dengan Dinas Kesehatan"
+        ],
+        image: "https://images.unsplash.com/photo-1583324113626-70df0f4deaab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        status: "Rutin",
+        period: "Setiap Bulan"
+      },
+      pengelolaan_limbah: {
+        title: "Pengelolaan Limbah",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+          </svg>`,
+        description: "Sistem pengelolaan limbah domestik untuk menjaga kebersihan lingkungan.",
+        content: `
+          <p class="mb-4">Program pengelolaan limbah kami fokus pada pengelolaan limbah domestik untuk mengurangi polusi lingkungan dan meningkatkan kesehatan masyarakat.</p>
+          <p class="mb-4">Kami telah membangun 5 sistem pengelolaan limbah di desa-desa binaan, termasuk instalasi pengolahan limbah sederhana dan tempat pembuangan sampah terpilah.</p>
+          <p class="mb-4">Program ini melibatkan masyarakat lokal dalam proses pengelolaan limbah untuk memastikan keberlanjutan. Hasilnya, volume sampah yang tidak terkelola berkurang 60% di desa-desa binaan.</p>
+          <p class="mb-4">Ke depan, kami berencana untuk memperkenalkan teknologi daur ulang sederhana untuk limbah organik dan anorganik di 5 desa tambahan.</p>
+        `,
+        achievements: [
+          "5 sistem limbah dibangun",
+          "Pengurangan sampah 60%",
+          "Keterlibatan masyarakat lokal",
+          "Pembangunan tempat sampah terpilah"
+        ],
+        image: "https://images.unsplash.com/photo-1580281658626-523a0b25dd3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        status: "Berjalan",
+        period: "2022-2024"
+      },
+      sumur_bor: {
+        title: "Pembangunan Sumur Bor",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>`,
+        description: "Penyediaan sumur bor untuk akses air bersih di desa-desa terpencil.",
+        content: `
+          <p class="mb-4">Program pembangunan sumur bor kami bertujuan untuk menyediakan akses air bersih di desa-desa terpencil yang sulit dijangkau oleh sistem distribusi air konvensional.</p>
+          <p class="mb-4">Kami telah membangun 8 sumur bor di 5 desa, melayani lebih dari 1.500 warga. Setiap sumur dilengkapi dengan pompa tangan untuk memudahkan akses air.</p>
+          <p class="mb-4">Kami bekerja sama dengan ahli geologi untuk memastikan lokasi sumur memiliki sumber air yang berkelanjutan. Hasilnya, waktu yang dihabiskan untuk mengambil air berkurang 50% bagi masyarakat.</p>
+          <p class="mb-4">Ke depan, kami berencana untuk membangun 5 sumur bor tambahan dengan teknologi pompa bertenaga surya untuk efisiensi energi.</p>
+        `,
+        achievements: [
+          "8 sumur bor dibangun",
+          "1.500 warga terlayani",
+          "Pengurangan waktu ambil air 50%",
+          "Kerja sama dengan ahli geologi"
+        ],
+        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        status: "Pilot Project",
+        period: "2023-Sekarang"
+      },
+      teknologi_air: {
+        title: "Teknologi Air Bersih",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>`,
+        description: "Implementasi teknologi penyaringan air untuk menyediakan air bersih yang aman.",
+        content: `
+          <p class="mb-4">Program teknologi air bersih kami bertujuan untuk memperkenalkan teknologi penyaringan air yang terjangkau dan efektif untuk desa-desa di wilayah operasional perusahaan.</p>
+          <p class="mb-4">Kami berencana untuk mengimplementasikan sistem penyaringan berbasis membran di 5 desa pada tahap awal, menargetkan 1.000 warga untuk mendapatkan air bersih yang aman.</p>
+          <p class="mb-4">Program ini akan bekerja sama dengan ahli teknologi lingkungan untuk memastikan kualitas air sesuai standar WHO. Kami juga akan melatih masyarakat untuk mengoperasikan dan memelihara sistem penyaringan.</p>
+          <p class="mb-4">Ke depan, kami akan memperluas program ini dengan teknologi penyaringan berbasis energi terbarukan untuk meningkatkan efisiensi dan keberlanjutan.</p>
+        `,
+        achievements: [
+          "1.000 warga target tahap awal",
+          "Kerja sama dengan ahli teknologi",
+          "Sistem penyaringan membran",
+          "Pelatihan pengoperasian sistem"
+        ],
+        image: "https://images.unsplash.com/photo-1593113598332-fce4f2ca06b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        status: "Rencana",
+        period: "2024-2026"
+      }
+    };
+
+    // Fungsi openModal
+    function openModal(programId) {
+      const program = programData[programId];
+      const modalContent = document.getElementById('modalContent');
+
+      modalContent.innerHTML = `
+        <div class="max-w-4xl mx-auto">
+          <div class="mb-8">
+            <img src="${program.image}" alt="${program.title}" class="w-full h-64 md:h-96 object-cover rounded-lg">
+          </div>
+          
+          <div class="flex items-center mb-4">
+            ${program.icon}
+            <h1 class="text-2xl font-bold text-gray-800">${program.title}</h1>
+          </div>
+          
+          <div class="flex items-center text-sm text-gray-500 mb-6">
+            <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full mr-3">${program.status}</span>
+            <span>${program.period}</span>
+          </div>
+          
+          <div class="prose max-w-none">
+            <p class="text-gray-600 mb-6">${program.description}</p>
+            ${program.content || ''}
+            
+            <div class="bg-green-50 p-6 rounded-lg mt-8">
+              <h3 class="text-lg font-semibold text-green-800 mb-3">Pencapaian:</h3>
+              <ul class="space-y-2">
+                ${program.achievements.map(a => `<li class="flex items-start">
+                  <span class="text-green-600 mr-2">✓</span>
+                  <span>${a}</span>
+                </li>`).join('')}
+              </ul>
+            </div>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('modalOverlay').classList.remove('hidden');
+      document.getElementById('modalContainer').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Fungsi closeModal
+    function closeModal() {
+      document.getElementById('modalOverlay').classList.add('hidden');
+      document.getElementById('modalContainer').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Tutup modal ketika klik di overlay
+    document.getElementById('modalOverlay').addEventListener('click', closeModal);
+
+    // Fungsi untuk menampilkan lightbox
+    function showLightbox(src, alt = '', caption = '') {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxCaption = document.getElementById('lightbox-caption');
+
+      lightboxImg.src = src;
+      lightboxImg.alt = alt;
+      lightboxCaption.textContent = caption;
+
+      lightbox.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Fungsi untuk menyembunyikan lightbox
+    function hideLightbox() {
+      document.getElementById('lightbox').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Tutup lightbox saat klik di luar gambar
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) {
+        hideLightbox();
+      }
+    });
+
+    // Carousel Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const carouselTrack = document.getElementById('cardContainer');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const dots = document.querySelectorAll('.dot-indicator');
+
+      if (!carouselTrack) return;
+
+      let currentIndex = 0;
+      const cards = document.querySelectorAll('.snap-start');
+      if (cards.length === 0) return;
+
+      const cardWidth = cards[0].offsetWidth + 24;
+      const visibleCards = window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 3;
+      const totalCards = cards.length;
+
+      function updateDots() {
+        dots.forEach((dot, index) => {
+          if (dot) {
+            dot.classList.toggle('bg-green-600', index === Math.floor(currentIndex / visibleCards));
+            dot.classList.toggle('bg-gray-300', index !== Math.floor(currentIndex / visibleCards));
+          }
+        });
+      }
+
+      function scrollToCard(index) {
+        currentIndex = Math.max(0, Math.min(index, totalCards - visibleCards));
+        carouselTrack.scrollTo({
+          left: currentIndex * cardWidth,
+          behavior: 'smooth'
+        });
+        updateDots();
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          scrollToCard(currentIndex + 1);
+        });
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          scrollToCard(currentIndex - 1);
+        });
+      }
+
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          const index = parseInt(dot.getAttribute('data-index'));
+          scrollToCard(index * visibleCards);
+        });
+      });
+
+      window.addEventListener('resize', () => {
+        scrollToCard(currentIndex);
+      });
+
+      updateDots();
+    });
+  </script>
+
+  <style>
+    #lightbox {
+      transition: opacity 0.3s ease;
+    }
+
+    #lightbox:not(.hidden) {
+      display: flex !important;
+    }
+
+    #modalContainer {
+      transition: all 0.3s ease-out;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    #modalContainer:not(.hidden) {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</body>
+</html>

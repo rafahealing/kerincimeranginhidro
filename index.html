@@ -354,6 +354,8 @@
 
 <!-- ...existing code... -->
 <script src="main.js"></script>
+
+
 <!-- ...existing code... -->
 
 </body>
@@ -592,6 +594,63 @@
     });
   });
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Load footer
+  fetch("./footer.html")
+    .then((res) => res.text())
+    .then((data) => {
+      document.getElementById("footer-container").innerHTML = data;
+
+      // Setelah footer selesai dimuat, pasang listener untuk tombol modal
+      setupModal();
+    });
+});
+
+function setupModal() {
+  const triggers = {
+    sportModalTrigger: "sportModal",
+    eventModalTrigger: "eventModal",
+    travelingModalTrigger: "travelingModal",
+    healthModalTrigger: "healthModal",
+    csrModalTrigger: "csrModal",
+  };
+
+  // Pasang event click untuk setiap tombol
+  Object.keys(triggers).forEach((id) => {
+    const trigger = document.getElementById(id);
+    if (trigger) {
+      trigger.addEventListener("click", function () {
+        document.getElementById(triggers[id]).classList.add("active");
+        document.body.classList.add("modal-open");
+      });
+    }
+  });
+
+  // Tutup modal kalau klik luar
+  const modals = document.querySelectorAll(".modal");
+  modals.forEach((modal) => {
+    modal.addEventListener("click", function (e) {
+      if (e.target === modal) {
+        modal.classList.remove("active");
+        document.body.classList.remove("modal-open");
+      }
+    });
+  });
+
+  // Tombol close di dalam modal
+  const closeButtons = document.querySelectorAll(".modal .close");
+  closeButtons.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      btn.closest(".modal").classList.remove("active");
+      document.body.classList.remove("modal-open");
+    });
+  });
+}
+</script>
+
+
 
 
 

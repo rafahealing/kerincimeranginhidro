@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSR Infrastruktur | Kerinci Merangin Hidro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              '50': '#f0fdf4',
+              '100': '#dcfce7',
+              '200': '#bbf7d0',
+              '300': '#86efac',
+              '400': '#4ade80',
+              '500': '#22c55e',
+              '600': '#16a34a',
+              '700': '#15803d',
+              '800': '#166534',
+              '900': '#14532d'
+            },
+          },
+          backgroundImage: {
+            'infrastructure-pattern': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0C13.431 0 0 13.431 0 30s13.431 30 30 30 30-13.431 30-30S46.569 0 30 0zm0 54C16.745 54 6 43.255 6 30S16.745 6 30 6s24 10.745 24 24-10.745 24-24 24z' fill='%234ade80' fill-opacity='0.1'/%3E%3Cpath d='M30 12c-9.941 0-18 8.059-18 18s8.059 18 18 18 18-8.059 18-18-8.059-18-18-18zm0 30c-6.627 0-12-5.373-12-12s5.373-12 12-12 12 5.373 12 12-5.373 12-12 12z' fill='%2322c55e' fill-opacity='0.1'/%3E%3C/svg%3E\")"
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom,
+          #16a34a 0%,
+          #15803d 25%,
+          #166534 50%,
+          #14532d 75%,
+          #052e16 100%
+        );
+      min-height: 100vh;
+      margin: 0;
+      background-attachment: fixed;
+    }
+  </style>
+
+  <style>
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .snap-start {
+      scroll-snap-align: start;
+    }
+  </style>
+  
+</head>
+
+<body class="bg-green-50 text-gray-800" style="font-family: Poppins, sans-serif;">
+  <div id="navbar-container"></div>
+  <!-- Floating 3D elements (infrastructure-themed) -->
+  <div class="infrastructure-symbol" style="top:10%;left:5%;animation-delay:0s;"></div>
+  <div class="infrastructure-symbol" style="top:70%;left:80%;animation-delay:2s;"></div>
+  <div class="infrastructure-symbol" style="top:30%;left:60%;animation-delay:4s;"></div>
+
+  <!-- HEADER -->
+  <header class="bg-gradient-to-r from-green-800 to-green-700 text-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-4 py-6">
+      <h1 class="text-3xl font-bold text-center">CSR Infrastruktur</h1>
+      <p class="text-green-100 mt-2 text-center">Komitmen kami untuk membangun infrastruktur yang berkelanjutan demi mendukung kesejahteraan masyarakat dan pembangunan daerah.</p>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="bg-gradient-to-br from-green-600 to-green-800 text-white py-14">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 mb-8 md:mb-0">
+        <h2 class="text-3xl font-bold mb-4">Membangun Masa Depan yang Kokoh</h2>
+        <p class="text-green-100 mb-6">PT Kerinci Merangin Hidro berkomitmen untuk membangun infrastruktur yang mendukung aksesibilitas, kesehatan, dan pertumbuhan ekonomi masyarakat lokal.</p>
+      </div>
+      <div class="md:w-1/2">
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+          alt="Infrastruktur" class="w-full rounded-lg shadow-xl">
+      </div>
+    </div>
+  </section>
+
+  <!-- VISI MISI -->
+  <section class="bg-green-800 text-white py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-green-900 p-6 rounded-lg shadow-lg">
+          <h2 class="text-2xl font-bold mb-4 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Visi Infrastruktur
+          </h2>
+          <p class="text-green-100">Menciptakan infrastruktur yang berkelanjutan untuk mendukung kesejahteraan masyarakat dan pembangunan daerah.</p>
+        </div>
+        <div class="bg-green-900 p-6 rounded-lg shadow-lg">
+          <h2 class="text-2xl font-bold mb-4 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+            </svg>
+            Misi Infrastruktur
+          </h2>
+          <ul class="text-green-100 space-y-2">
+            <li class="flex items-start"><span class="mr-2">•</span> Membangun infrastruktur dasar seperti jalan dan jembatan</li>
+            <li class="flex items-start"><span class="mr-2">•</span> Menyediakan akses air bersih dan sanitasi</li>
+            <li class="flex items-start"><span class="mr-2">•</span> Meningkatkan konektivitas desa-desa terpencil</li>
+            <li class="flex items-start"><span class="mr-2">•</span> Mendukung pembangunan fasilitas umum</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTEN UTAMA -->
+  <main class="max-w-6xl mx-auto px-4 pt-12 pb-12" id="program">
+    <!-- Program Unggulan -->
+    <section class="pt-12 pb-16 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-yellow-300 mb-4">Program Unggulan Kami</h2>
+          <div class="w-20 h-1 bg-green-600 mx-auto mb-6"></div>
+        </div>
+
+        <!-- Container with Navigation Buttons -->
+        <div class="relative">
+          <!-- Navigation Buttons -->
+          <button id="prevBtn" class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 z-10 w-10 h-10 items-center justify-center rounded-full bg-white shadow-lg hover:bg-green-50 text-green-600 transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          <button id="nextBtn" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 z-10 w-10 h-10 items-center justify-center rounded-full bg-white shadow-lg hover:bg-green-50 text-green-600 transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          <!-- Card Container -->
+          <div id="cardContainer" class="grid grid-flow-col auto-cols-[85%] md:auto-cols-[45%] lg:auto-cols-[30%] gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-8 px-2 scrollbar-hide">
+            <!-- Card 1 -->
+            <div class="snap-start">
+              <button onclick="openModal('pembangunan_jalan')" class="w-full group text-left bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2 focus:outline-none">
+                <div class="aspect-w-16 aspect-h-10 relative">
+                  <img class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                    src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    alt="Pembangunan Jalan">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <span class="absolute top-4 right-4 bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                    Berjalan
+                  </span>
+                </div>
+                <div class="p-6">
+                  <div class="mb-3">
+                    <span class="text-green-600 text-sm font-medium">2023-2025</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight">Pembangunan Jalan</h3>
+                  <p class="text-gray-600 mb-5 leading-relaxed">
+                    Pembangunan dan perbaikan jalan untuk aksesibilitas desa.
+                  </p>
+                </div>
+              </button>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="snap-start">
+              <button onclick="openModal('air_bersih')" class="w-full group text-left bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2 focus:outline-none">
+                <div class="aspect-w-16 aspect-h-10 relative">
+                  <img class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                    src="https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    alt="Akses Air Bersih">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <span class="absolute top-4 right-4 bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                    Berjalan
+                  </span>
+                </div>
+                <div class="p-6">
+                  <div class="mb-3">
+                    <span class="text-green-600 text-sm font-medium">2022-2024</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight">Akses Air Bersih</h3>
+                  <p class="text-gray-600 mb-5 leading-relaxed">
+                    Penyediaan fasilitas air bersih dan sanitasi untuk masyarakat.
+                  </p>
+                </div>
+              </button>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="snap-start">
+              <button onclick="openModal('jembatan_desa')" class="w-full group text-left bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2 focus:outline-none">
+                <div class="aspect-w-16 aspect-h-10 relative">
+                  <img class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                    src="https://images.unsplash.com/photo-1519764622345-23439dd774f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    alt="Jembatan Desa">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <span class="absolute top-4 right-4 bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                    Berjalan
+                  </span>
+                </div>
+                <div class="p-6">
+                  <div class="mb-3">
+                    <span class="text-green-600 text-sm font-medium">2023-2025</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight">Jembatan Desa</h3>
+                  <p class="text-gray-600 mb-5 leading-relaxed">
+                    Pembangunan jembatan untuk konektivitas antar desa.
+                  </p>
+                </div>
+              </button>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="snap-start">
+              <button onclick="openModal('fasilitas_umum')" class="w-full group text-left bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2 focus:outline-none">
+                <div class="aspect-w-16 aspect-h-10 relative">
+                  <img class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                    src="https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    alt="Fasilitas Umum">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <span class="absolute top-4 right-4 bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                    Jangka Panjang
+                  </span>
+                </div>
+                <div class="p-6">
+                  <div class="mb-3">
+                    <span class="text-green-600 text-sm font-medium">Sejak 2020</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight">Fasilitas Umum</h3>
+                  <p class="text-gray-600 mb-5 leading-relaxed">
+                    Pembangunan balai desa dan fasilitas umum lainnya.
+                  </p>
+                </div>
+              </button>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="snap-start">
+              <button onclick="openModal('penerangan_jalan')" class="w-full group text-left bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2 focus:outline-none">
+                <div class="aspect-w-16 aspect-h-10 relative">
+                  <img class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                    src="https://images.unsplash.com/photo-1516841273335-e39b37888115?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    alt="Penerangan Jalan">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <span class="absolute top-4 right-4 bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                    Pilot Project
+                  </span>
+                </div>
+                <div class="p-6">
+                  <div class="mb-3">
+                    <span class="text-green-600 text-sm font-medium">2023-Sekarang</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight">Penerangan Jalan</h3>
+                  <p class="text-gray-600 mb-5 leading-relaxed">
+                    Pemasangan lampu jalan untuk keamanan dan kenyamanan.
+                  </p>
+                </div>
+              </button>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="snap-start">
+              <button onclick="openModal('irigasi_pertanian')" class="w-full group text-left bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2 focus:outline-none">
+                <div class="aspect-w-16 aspect-h-10 relative">
+                  <img class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                    src="https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    alt="Irigasi Pertanian">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <span class="absolute top-4 right-4 bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                    Rencana
+                  </span>
+                </div>
+                <div class="p-6">
+                  <div class="mb-3">
+                    <span class="text-green-600 text-sm font-medium">2024-2026</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight">Irigasi Pertanian</h3>
+                  <p class="text-gray-600 mb-5 leading-relaxed">
+                    Pembangunan sistem irigasi untuk mendukung pertanian.
+                  </p>
+                </div>
+              </button>
+            </div>
+          </div> <!-- End cardContainer -->
+        </div> <!-- End relative container -->
+      </div> <!-- End max-w-7xl -->
+    </section>
+
+    <!-- Galeri Foto -->
+    <section class="pb-16 pt-20 rounded-xl shadow-md">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl font-bold text-yellow-300 mb-3">Aksi Nyata Untuk Infrastruktur</h2>
+          <div class="w-16 h-1 bg-green-600 mx-auto mb-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Item 1 - Pembangunan Jalan -->
+          <div class="group relative block overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-green-100 cursor-pointer" onclick="showLightbox('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+            <div class="aspect-w-4 aspect-h-3">
+              <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Pembangunan jalan"
+                class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-green-900/70 via-transparent to-transparent flex items-end p-5">
+              <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <span class="inline-block px-3 py-1 bg-green-600 text-white text-xs font-medium rounded-full mb-2">2023</span>
+                <h3 class="text-xl font-semibold text-white">Pembangunan Jalan</h3>
+                <p class="text-green-100 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Pembangunan 10 km jalan desa
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 - Akses Air Bersih -->
+          <div class="group relative block overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-green-100 cursor-pointer" onclick="showLightbox('https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+            <div class="aspect-w-4 aspect-h-3">
+              <img src="https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Akses air bersih"
+                class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-green-900/70 via-transparent to-transparent flex items-end p-5">
+              <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <span class="inline-block px-3 py-1 bg-green-600 text-white text-xs font-medium rounded-full mb-2">2023</span>
+                <h3 class="text-xl font-semibold text-white">Akses Air Bersih</h3>
+                <p class="text-green-100 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Fasilitas air untuk 5 desa
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 - Jembatan Desa -->
+          <div class="group relative block overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-green-100 cursor-pointer" onclick="showLightbox('https://images.unsplash.com/photo-1519764622345-23439dd774f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+            <div class="aspect-w-4 aspect-h-3">
+              <img src="https://images.unsplash.com/photo-1519764622345-23439dd774f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Jembatan desa"
+                class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-green-900/70 via-transparent to-transparent flex items-end p-5">
+              <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <span class="inline-block px-3 py-1 bg-green-600 text-white text-xs font-medium rounded-full mb-2">2024</span>
+                <h3 class="text-xl font-semibold text-white">Jembatan Desa</h3>
+                <p class="text-green-100 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Pembangunan 3 jembatan
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4 - Fasilitas Umum -->
+          <div class="group relative block overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-green-100 cursor-pointer" onclick="showLightbox('https://images.unsplash.com/photo-1529339944189-c364d21c8b47?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+            <div class="aspect-w-4 aspect-h-3">
+              <img src="https://images.unsplash.com/photo-1529339944189-c364d21c8b47?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Fasilitas umum"
+                class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-green-900/70 via-transparent to-transparent flex items-end p-5">
+              <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <span class="inline-block px-3 py-1 bg-green-600 text-white text-xs font-medium rounded-full mb-2">2024</span>
+                <h3 class="text-xl font-semibold text-white">Fasilitas Umum</h3>
+                <p class="text-green-100 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Pembangunan 4 balai desa
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox Element -->
+    <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden items-center justify-center">
+      <div class="relative max-w-4xl w-full">
+        <button onclick="hideLightbox()" class="absolute -top-12 right-0 text-white hover:text-gray-300">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <img id="lightbox-img" src="" alt="" class="w-full max-h-[90vh] object-contain">
+        <p id="lightbox-caption" class="text-white text-center mt-2"></p>
+      </div>
+    </div>
+
+    <!-- Pencapaian -->
+    <section class="mt-16 mb-1 py-7 bg-green-700 text-white p-8 rounded-xl">
+      <h2 class="text-2xl font-bold mb-6 text-center">Pencapaian Kami</h2>
+      <div class="grid md:grid-cols-4 gap-6 text-center">
+        <div class="bg-green-800 p-4 rounded-lg">
+          <div class="text-4xl font-bold mb-2">15 km</div>
+          <div class="text-green-200">Jalan Dibangun</div>
+        </div>
+        <div class="bg-green-800 p-4 rounded-lg">
+          <div class="text-4xl font-bold mb-2">8</div>
+          <div class="text-green-200">Desa dengan Air Bersih</div>
+        </div>
+        <div class="bg-green-800 p-4 rounded-lg">
+          <div class="text-4xl font-bold mb-2">5</div>
+          <div class="text-green-200">Jembatan Dibangun</div>
+        </div>
+        <div class="bg-green-800 p-4 rounded-lg">
+          <div class="text-4xl font-bold mb-2">6</div>
+          <div class="text-green-200">Fasilitas Umum Dibangun</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Structure -->
+    <div id="modalOverlay" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4">
+      <div id="modalContainer" class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto hidden">
+        <div class="p-6">
+          <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <div id="modalContent"></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+  <div id="footer-container"></div>
+  <script src="../main.js"></script>
+
+  <script>
+    // Data untuk modal
+    const programData = {
+      pembangunan_jalan: {
+        title: "Pembangunan Jalan",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5h6M9 12h6m-6 7h6m-9-7h18M3 7h18M3 19h18" />
+          </svg>`,
+        description: "Pembangunan dan perbaikan jalan untuk meningkatkan aksesibilitas desa-desa terpencil.",
+        content: `
+          <p class="mb-4">Program pembangunan jalan kami bertujuan untuk meningkatkan konektivitas dan aksesibilitas di desa-desa binaan, mendukung mobilitas masyarakat dan distribusi barang.</p>
+          <p class="mb-4">Kami telah membangun dan memperbaiki 15 km jalan di 8 desa, termasuk jalan aspal dan beton untuk akses yang lebih tahan lama.</p>
+          <p class="mb-4">Program ini bekerja sama dengan dinas pekerjaan umum dan masyarakat lokal untuk memastikan kualitas dan keberlanjutan. Hasilnya, waktu tempuh antar desa berkurang hingga 40%.</p>
+          <p class="mb-4">Ke depan, kami berencana untuk memperluas pembangunan jalan hingga 20 km tambahan dan memperbaiki jalur-jalur strategis lainnya.</p>
+        `,
+        achievements: [
+          "15 km jalan dibangun",
+          "8 desa terhubung",
+          "Waktu tempuh berkurang 40%",
+          "Kerja sama dengan dinas PU"
+        ],
+        image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        status: "Berjalan",
+        period: "2023-2025"
+      },
+      air_bersih: {
+        title: "Akses Air Bersih",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13c-2.757 0-5-2.243-5-5h10c0 2.757-2.243 5-5 5z" />
+          </svg>`,
+        description: "Penyediaan fasilitas air bersih dan sanitasi untuk mendukung kesehatan masyarakat.",
+        content: `
+          <p class="mb-4">Program akses air bersih kami fokus pada penyediaan air bersih dan sanitasi yang layak untuk masyarakat di desa-desa binaan.</p>
+          <p class="mb-4">Kami telah membangun fasilitas air bersih di 8 desa, termasuk sumur bor dan sistem distribusi air, melayani lebih dari 2.000 warga.</p>
+          <p class="mb-4">Program ini bekerja sama dengan dinas kesehatan dan komunitas lokal untuk memastikan air aman dan berkelanjutan. Hasilnya, angka penyakit terkait air menurun 50%.</p>
+          <p class="mb-4">Ke depan, kami berencana untuk membangun fasilitas air bersih tambahan di 5 desa dan memperkenalkan teknologi penyaringan air modern.</p>
+        `,
+        achievements: [
+          "8 desa dengan air bersih",
+          "2.000 warga terlayani",
+          "Penyakit air menurun 50%",
+          "Kerja sama dinas kesehatan"
+        ],
+        image: "https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        status: "Berjalan",
+        period: "2022-2024"
+      },
+      jembatan_desa: {
+        title: "Jembatan Desa",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-12H4" />
+          </svg>`,
+        description: "Pembangunan jembatan untuk meningkatkan konektivitas antar desa.",
+        content: `
+          <p class="mb-4">Program pembangunan jembatan kami bertujuan untuk menghubungkan desa-desa terpencil, memudahkan akses ke pasar dan layanan publik.</p>
+          <p class="mb-4">Kami telah membangun 5 jembatan di 4 desa, dengan panjang total 200 meter, menggunakan bahan ramah lingkungan dan tahan lama.</p>
+          <p class="mb-4">Program ini melibatkan konsultasi dengan masyarakat lokal untuk memastikan desain sesuai kebutuhan. Hasilnya, akses antar desa meningkat 60%.</p>
+          <p class="mb-4">Ke depan, kami akan membangun 3 jembatan tambahan dan memperbaiki jembatan-jembatan yang rusak untuk mendukung mobilitas masyarakat.</p>
+        `,
+        achievements: [
+          "5 jembatan dibangun",
+          "200 meter panjang total",
+          "Akses desa meningkat 60%",
+          "Desain ramah lingkungan"
+        ],
+        image: "https://images.unsplash.com/photo-1519764622345-23439dd774f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        status: "Berjalan",
+        period: "2023-2025"
+      },
+      fasilitas_umum: {
+        title: "Fasilitas Umum",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+          </svg>`,
+        description: "Pembangunan balai desa dan fasilitas umum untuk mendukung kegiatan masyarakat.",
+        content: `
+          <p class="mb-4">Program fasilitas umum kami fokus pada pembangunan balai desa, pusat kegiatan masyarakat, dan fasilitas publik lainnya.</p>
+          <p class="mb-4">Kami telah membangun 6 balai desa dan fasilitas umum lainnya di 5 desa, termasuk ruang serbaguna dan perpustakaan desa.</p>
+          <p class="mb-4">Program ini melibatkan masyarakat lokal dalam perencanaan untuk memastikan fasilitas sesuai kebutuhan. Hasilnya, kegiatan komunitas meningkat 45%.</p>
+          <p class="mb-4">Ke depan, kami akan membangun fasilitas umum tambahan seperti taman bermain dan pusat kesehatan masyarakat di desa-desa binaan.</p>
+        `,
+        achievements: [
+          "6 fasilitas umum dibangun",
+          "5 desa terlayani",
+          "Kegiatan komunitas naik 45%",
+          "Keterlibatan masyarakat lokal"
+        ],
+        image: "https://images.unsplash.com/photo-1529339944189-c364d21c8b47?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        status: "Jangka Panjang",
+        period: "Sejak 2020"
+      },
+      penerangan_jalan: {
+        title: "Penerangan Jalan",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>`,
+        description: "Pemasangan lampu jalan untuk meningkatkan keamanan dan kenyamanan masyarakat.",
+        content: `
+          <p class="mb-4">Program penerangan jalan kami bertujuan untuk meningkatkan keamanan dan kenyamanan masyarakat di malam hari melalui pemasangan lampu jalan.</p>
+          <p class="mb-4">Kami telah memasang 100 lampu jalan bertenaga surya di 5 desa, mencakup jalur utama dan area publik.</p>
+          <p class="mb-4">Program ini menggunakan teknologi ramah lingkungan dan melibatkan masyarakat dalam pemeliharaan. Hasilnya, angka kejahatan malam hari menurun 30%.</p>
+          <p class="mb-4">Ke depan, kami berencana untuk memasang 50 lampu tambahan dan memperkenalkan sistem pemantauan energi untuk efisiensi.</p>
+        `,
+        achievements: [
+          "100 lampu jalan dipasang",
+          "5 desa terlayani",
+          "Kejahatan malam menurun 30%",
+          "Teknologi bertenaga surya"
+        ],
+        image: "https://images.unsplash.com/photo-1516841273335-e39b37888115?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        status: "Pilot Project",
+        period: "2023-Sekarang"
+      },
+      irigasi_pertanian: {
+        title: "Irigasi Pertanian",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+          </svg>`,
+        description: "Pembangunan sistem irigasi untuk mendukung produktivitas pertanian masyarakat.",
+        content: `
+          <p class="mb-4">Program irigasi pertanian kami bertujuan untuk meningkatkan produktivitas pertanian melalui penyediaan sistem irigasi yang efisien.</p>
+          <p class="mb-4">Kami berencana untuk membangun sistem irigasi di 5 desa, mencakup 500 hektar lahan pertanian, dengan teknologi irigasi tetes dan kanal modern.</p>
+          <p class="mb-4">Program ini akan melibatkan petani lokal dan dinas pertanian untuk memastikan sistem sesuai kebutuhan. Target kami adalah meningkatkan hasil panen hingga 40%.</p>
+          <p class="mb-4">Ke depan, kami akan memperluas sistem irigasi ke desa-desa lain dan memperkenalkan pelatihan pengelolaan air untuk petani.</p>
+        `,
+        achievements: [
+          "5 desa target irigasi",
+          "500 hektar lahan",
+          "Target hasil panen naik 40%",
+          "Kerja sama dengan petani"
+        ],
+        image: "https://images.unsplash.com/photo-1500595046743-ddf4d3d753dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        status: "Rencana",
+        period: "2024-2026"
+      }
+    };
+
+    // Fungsi openModal
+    function openModal(programId) {
+      const program = programData[programId];
+      const modalContent = document.getElementById('modalContent');
+
+      modalContent.innerHTML = `
+        <div class="max-w-4xl mx-auto">
+          <div class="mb-8">
+            <img src="${program.image}" alt="${program.title}" class="w-full h-64 md:h-96 object-cover rounded-lg">
+          </div>
+          
+          <div class="flex items-center mb-4">
+            ${program.icon}
+            <h1 class="text-2xl font-bold text-gray-800">${program.title}</h1>
+          </div>
+          
+          <div class="flex items-center text-sm text-gray-500 mb-6">
+            <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full mr-3">${program.status}</span>
+            <span>${program.period}</span>
+          </div>
+          
+          <div class="prose max-w-none">
+            <p class="text-gray-600 mb-6">${program.description}</p>
+            ${program.content || ''}
+            
+            <div class="bg-green-50 p-6 rounded-lg mt-8">
+              <h3 class="text-lg font-semibold text-green-800 mb-3">Pencapaian:</h3>
+              <ul class="space-y-2">
+                ${program.achievements.map(a => `<li class="flex items-start">
+                  <span class="text-green-600 mr-2">✓</span>
+                  <span>${a}</span>
+                </li>`).join('')}
+              </ul>
+            </div>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('modalOverlay').classList.remove('hidden');
+      document.getElementById('modalContainer').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Fungsi closeModal
+    function closeModal() {
+      document.getElementById('modalOverlay').classList.add('hidden');
+      document.getElementById('modalContainer').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Tutup modal ketika klik di overlay
+    document.getElementById('modalOverlay').addEventListener('click', closeModal);
+
+    // Fungsi untuk menampilkan lightbox
+    function showLightbox(src, alt = '', caption = '') {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxCaption = document.getElementById('lightbox-caption');
+
+      lightboxImg.src = src;
+      lightboxImg.alt = alt;
+      lightboxCaption.textContent = caption;
+
+      lightbox.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Fungsi untuk menyembunyikan lightbox
+    function hideLightbox() {
+      document.getElementById('lightbox').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Tutup lightbox saat klik di luar gambar
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) {
+        hideLightbox();
+      }
+    });
+
+    // Carousel Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const carouselTrack = document.getElementById('cardContainer');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const dots = document.querySelectorAll('.dot-indicator');
+
+      if (!carouselTrack) return;
+
+      let currentIndex = 0;
+      const cards = document.querySelectorAll('.snap-start');
+      if (cards.length === 0) return;
+
+      const cardWidth = cards[0].offsetWidth + 24;
+      const visibleCards = window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 3;
+      const totalCards = cards.length;
+
+      function updateDots() {
+        dots.forEach((dot, index) => {
+          if (dot) {
+            dot.classList.toggle('bg-green-600', index === Math.floor(currentIndex / visibleCards));
+            dot.classList.toggle('bg-gray-300', index !== Math.floor(currentIndex / visibleCards));
+          }
+        });
+      }
+
+      function scrollToCard(index) {
+        currentIndex = Math.max(0, Math.min(index, totalCards - visibleCards));
+        carouselTrack.scrollTo({
+          left: currentIndex * cardWidth,
+          behavior: 'smooth'
+        });
+        updateDots();
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          scrollToCard(currentIndex + 1);
+        });
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          scrollToCard(currentIndex - 1);
+        });
+      }
+
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          const index = parseInt(dot.getAttribute('data-index'));
+          scrollToCard(index * visibleCards);
+        });
+      });
+
+      window.addEventListener('resize', () => {
+        scrollToCard(currentIndex);
+      });
+
+      updateDots();
+    });
+  </script>
+
+  <style>
+    #lightbox {
+      transition: opacity 0.3s ease;
+    }
+
+    #lightbox:not(.hidden) {
+      display: flex !important;
+    }
+
+    #modalContainer {
+      transition: all 0.3s ease-out;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    #modalContainer:not(.hidden) {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</body>
+</html>

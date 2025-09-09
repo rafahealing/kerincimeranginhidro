@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSR Keagamaan | Kerinci Merangin Hidro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              '50': '#f0fdf4',
+              '100': '#dcfce7',
+              '200': '#bbf7d0',
+              '300': '#86efac',
+              '400': '#4ade80',
+              '500': '#22c55e',
+              '600': '#16a34a',
+              '700': '#15803d',
+              '800': '#166534',
+              '900': '#14532d'
+            },
+          },
+          backgroundImage: {
+            'religious-pattern': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0C13.431 0 0 13.431 0 30s13.431 30 30 30 30-13.431 30-30S46.569 0 30 0zm0 54C16.745 54 6 43.255 6 30S16.745 6 30 6s24 10.745 24 24-10.745 24-24 24z' fill='%234ade80' fill-opacity='0.1'/%3E%3Cpath d='M30 12c-9.941 0-18 8.059-18 18s8.059 18 18 18 18-8.059 18-18-8.059-18-18-18zm0 30c-6.627 0-12-5.373-12-12s5.373-12 12-12 12 5.373 12 12-5.373 12-12 12z' fill='%2322c55e' fill-opacity='0.1'/%3E%3C/svg%3E\")"
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom,
+          #16a34a 0%,
+          #15803d 25%,
+          #166534 50%,
+          #14532d 75%,
+          #052e16 100%
+        );
+      min-height: 100vh;
+      margin: 0;
+      background-attachment: fixed;
+    }
+  </style>
+
+  <style>
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .snap-start {
+      scroll-snap-align: start;
+    }
+  </style>
+  
+</head>
+
+<body class="bg-green-50 text-gray-800" style="font-family: Poppins, sans-serif;">
+  <div id="navbar-container"></div>
+  <!-- Floating 3D elements (religious-themed) -->
+  <div class="religious-symbol" style="top:10%;left:5%;animation-delay:0s;"></div>
+  <div class="religious-symbol" style="top:70%;left:80%;animation-delay:2s;"></div>
+  <div class="religious-symbol" style="top:30%;left:60%;animation-delay:4s;"></div>
+
+  <!-- HEADER -->
+  <header class="bg-gradient-to-r from-green-800 to-green-700 text-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-4 py-6">
+      <h1 class="text-3xl font-bold text-center">CSR Keagamaan</h1>
+      <p class="text-green-100 mt-2 text-center">Komitmen kami untuk mendukung nilai-nilai keagamaan, memperkuat harmoni sosial, dan memajukan kegiatan keagamaan masyarakat.</p>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="bg-gradient-to-br from-green-600 to-green-800 text-white py-14">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 mb-8 md:mb-0">
+        <h2 class="text-3xl font-bold mb-4">Memperkuat Harmoni Keagamaan</h2>
+        <p class="text-green-100 mb-6">PT Kerinci Merangin Hidro berkomitmen untuk mendukung kegiatan keagamaan, membangun sarana ibadah, dan mempromosikan toleransi antarumat beragama guna menciptakan harmoni sosial.</p>
+      </div>
+      <div class="md:w-1/2">
+        <img src="https://images.unsplash.com/photo-1511497584788-876760111969?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+          alt="Kegiatan Keagamaan" class="w-full rounded-lg shadow-xl">
+      </div>
+    </div>
+  </section>
+
+  <!-- VISI MISI -->
+  <section class="bg-green-800 text-white py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-green-900 p-6 rounded-lg shadow-lg">
+          <h2 class="text-2xl font-bold mb-4 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Visi Keagamaan
+          </h2>
+          <p class="text-green-100">Menciptakan komunitas yang harmonis melalui dukungan terhadap nilai-nilai keagamaan dan toleransi antarumat beragama.</p>
+        </div>
+        <div class="bg-green-900 p-6 rounded-lg shadow-lg">
+          <h2 class="text-2xl font-bold mb-4 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+            </svg>
+            Misi Keagamaan
+          </h2>
+          <ul class="text-green-100 space-y-2">
+            <li class="flex items-start"><span class="mr-2">•</span> Mendukung pembangunan sarana ibadah</li>
+            <li class="flex items-start"><span class="mr-2">•</span> Memfasilitasi kegiatan keagamaan lintas agama</li>
+            <li class="flex items-start"><span class="mr-2">•</span> Mempromosikan toleransi dan harmoni sosial</li>
+            <li class="flex items-start"><span class="mr-2">•</span> Memberikan pendidikan keagamaan inklusif</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTEN UTAMA -->
+  <main class="max-w-6xl mx-auto px-4 pt-12 pb-12" id="program">
+    <!-- Program Unggulan -->
+    <section class="pt-12 pb-16 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-yellow-300 mb-4">Program Unggulan Kami</h2>
+          <div class="w-20 h-1 bg-green-600 mx-auto mb-6"></div>
+        </div>
+
+        <!-- Container with Navigation Buttons -->
+        <div class="relative">
+          <!-- Navigation Buttons -->
+          <button id="prevBtn" class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 z-10 w-10 h-10 items-center justify-center rounded-full bg-white shadow-lg hover:bg-green-50 text-green-600 transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          <button id="nextBtn" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 z-10 w-10 h-10 items-center justify-center rounded-full bg-white shadow-lg hover:bg-green-50 text-green-600 transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          <!-- Card Container -->
+          <div id="cardContainer" class="grid grid-flow-col auto-cols-[85%] md:auto-cols-[45%] lg:auto-cols-[30%] gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-8 px-2 scrollbar-hide">
+            <!-- Card 1 -->
+            <div class="snap-start">
+              <button onclick="openModal('sarana_ibadah')" class="w-full group text-left bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2 focus:outline-none">
+                <div class="aspect-w-16 aspect-h-10 relative">
+                  <img class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                    src="https://images.unsplash.com/photo-1519764622345-23439dd774f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    alt="Pembangunan Sarana Ibadah">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <span class="absolute top-4 right-4 bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                    Berjalan
+                  </span>
+                </div>
+                <div class="p-6">
+                  <div class="mb-3">
+                    <span class="text-green-600 text-sm font-medium">2023-2025</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight">Pembangunan Sarana Ibadah</h3>
+                  <p class="text-gray-600 mb-5 leading-relaxed">
+                    Pembangunan dan renovasi masjid, gereja, dan tempat ibadah lainnya.
+                  </p>
+                </div>
+              </button>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="snap-start">
+              <button onclick="openModal('kegiatan_keagamaan')" class="w-full group text-left bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2 focus:outline-none">
+                <div class="aspect-w-16 aspect-h-10 relative">
+                  <img class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                    src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    alt="Kegiatan Keagamaan">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <span class="absolute top-4 right-4 bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                    Rutin
+                  </span>
+                </div>
+                <div class="p-6">
+                  <div class="mb-3">
+                    <span class="text-green-600 text-sm font-medium">Setiap Tahun</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight">Kegiatan Keagamaan</h3>
+                  <p class="text-gray-600 mb-5 leading-relaxed">
+                    Dukungan untuk perayaan hari besar keagamaan lintas agama.
+                  </p>
+                </div>
+              </button>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="snap-start">
+              <button onclick="openModal('edukasi_keagamaan')" class="w-full group text-left bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2 focus:outline-none">
+                <div class="aspect-w-16 aspect-h-10 relative">
+                  <img class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                    src="https://images.unsplash.com/photo-1519764622345-23439dd774f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    alt="Edukasi Keagamaan">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <span class="absolute top-4 right-4 bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                    Berjalan
+                  </span>
+                </div>
+                <div class="p-6">
+                  <div class="mb-3">
+                    <span class="text-green-600 text-sm font-medium">2022-2024</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight">Edukasi Keagamaan</h3>
+                  <p class="text-gray-600 mb-5 leading-relaxed">
+                    Program pendidikan keagamaan untuk anak-anak dan remaja.
+                  </p>
+                </div>
+              </button>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="snap-start">
+              <button onclick="openModal('toleransi_antaragama')" class="w-full group text-left bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2 focus:outline-none">
+                <div class="aspect-w-16 aspect-h-10 relative">
+                  <img class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                    src="https://images.unsplash.com/photo-1515169067868-5387ec356754?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    alt="Toleransi Antaragama">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <span class="absolute top-4 right-4 bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                    Jangka Panjang
+                  </span>
+                </div>
+                <div class="p-6">
+                  <div class="mb-3">
+                    <span class="text-green-600 text-sm font-medium">Sejak 2020</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight">Toleransi Antaragama</h3>
+                  <p class="text-gray-600 mb-5 leading-relaxed">
+                    Dialog dan kegiatan untuk mempromosikan toleransi antarumat beragama.
+                  </p>
+                </div>
+              </button>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="snap-start">
+              <button onclick="openModal('beasiswa_keagamaan')" class="w-full group text-left bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2 focus:outline-none">
+                <div class="aspect-w-16 aspect-h-10 relative">
+                  <img class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                    src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    alt="Beasiswa Keagamaan">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <span class="absolute top-4 right-4 bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                    Pilot Project
+                  </span>
+                </div>
+                <div class="p-6">
+                  <div class="mb-3">
+                    <span class="text-green-600 text-sm font-medium">2023-Sekarang</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight">Beasiswa Keagamaan</h3>
+                  <p class="text-gray-600 mb-5 leading-relaxed">
+                    Dukungan pendidikan untuk pelajar di lembaga keagamaan.
+                  </p>
+                </div>
+              </button>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="snap-start">
+              <button onclick="openModal('kajian_lintas_agama')" class="w-full group text-left bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2 focus:outline-none">
+                <div class="aspect-w-16 aspect-h-10 relative">
+                  <img class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                    src="https://images.unsplash.com/photo-1515169067868-5387ec356754?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    alt="Kajian Lintas Agama">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <span class="absolute top-4 right-4 bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                    Rencana
+                  </span>
+                </div>
+                <div class="p-6">
+                  <div class="mb-3">
+                    <span class="text-green-600 text-sm font-medium">2024-2026</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight">Kajian Lintas Agama</h3>
+                  <p class="text-gray-600 mb-5 leading-relaxed">
+                    Forum diskusi untuk mempromosikan pemahaman antaragama.
+                  </p>
+                </div>
+              </button>
+            </div>
+          </div> <!-- End cardContainer -->
+        </div> <!-- End relative container -->
+      </div> <!-- End max-w-7xl -->
+    </section>
+
+    <!-- Galeri Foto -->
+    <section class="pb-16 pt-20 rounded-xl shadow-md">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl font-bold text-yellow-300 mb-3">Aksi Nyata Untuk Keagamaan</h2>
+          <div class="w-16 h-1 bg-green-600 mx-auto mb-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Item 1 - Pembangunan Sarana Ibadah -->
+          <div class="group relative block overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-green-100 cursor-pointer" onclick="showLightbox('https://images.unsplash.com/photo-1518819950720-294c45a0b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+            <div class="aspect-w-4 aspect-h-3">
+              <img src="https://images.unsplash.com/photo-1511497584788-876760111969?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                alt="Pembangunan sarana ibadah"
+                class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-green-900/70 via-transparent to-transparent flex items-end p-5">
+              <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <span class="inline-block px-3 py-1 bg-green-600 text-white text-xs font-medium rounded-full mb-2">2023</span>
+                <h3 class="text-xl font-semibold text-white">Pembangunan Sarana Ibadah</h3>
+                <p class="text-green-100 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Renovasi 5 tempat ibadah
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 - Kegiatan Keagamaan -->
+          <div class="group relative block overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-green-100 cursor-pointer" onclick="showLightbox('https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+            <div class="aspect-w-4 aspect-h-3">
+              <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Kegiatan keagamaan"
+                class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-green-900/70 via-transparent to-transparent flex items-end p-5">
+              <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <span class="inline-block px-3 py-1 bg-green-600 text-white text-xs font-medium rounded-full mb-2">2023</span>
+                <h3 class="text-xl font-semibold text-white">Kegiatan Keagamaan</h3>
+                <p class="text-green-100 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Dukungan untuk 10 perayaan hari besar
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 - Edukasi Keagamaan -->
+          <div class="group relative block overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-green-100 cursor-pointer" onclick="showLightbox('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+            <div class="aspect-w-4 aspect-h-3">
+              <img src="https://images.unsplash.com/photo-1511497584788-876760111969?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                alt="Edukasi keagamaan"
+                class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-green-900/70 via-transparent to-transparent flex items-end p-5">
+              <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <span class="inline-block px-3 py-1 bg-green-600 text-white text-xs font-medium rounded-full mb-2">2024</span>
+                <h3 class="text-xl font-semibold text-white">Edukasi Keagamaan</h3>
+                <p class="text-green-100 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Pendidikan untuk 300 anak dan remaja
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4 - Toleransi Antaragama -->
+          <div class="group relative block overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-green-100 cursor-pointer" onclick="showLightbox('https://images.unsplash.com/photo-1515169067868-5387ec356754?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+            <div class="aspect-w-4 aspect-h-3">
+              <img src="https://images.unsplash.com/photo-1515169067868-5387ec356754?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Toleransi antaragama"
+                class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-green-900/70 via-transparent to-transparent flex items-end p-5">
+              <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <span class="inline-block px-3 py-1 bg-green-600 text-white text-xs font-medium rounded-full mb-2">2024</span>
+                <h3 class="text-xl font-semibold text-white">Toleransi Antaragama</h3>
+                <p class="text-green-100 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Dialog lintas agama dengan 500 peserta
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox Element -->
+    <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden items-center justify-center">
+      <div class="relative max-w-4xl w-full">
+        <button onclick="hideLightbox()" class="absolute -top-12 right-0 text-white hover:text-gray-300">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <img id="lightbox-img" src="" alt="" class="w-full max-h-[90vh] object-contain">
+        <p id="lightbox-caption" class="text-white text-center mt-2"></p>
+      </div>
+    </div>
+
+    <!-- Pencapaian -->
+    <section class="mt-16 mb-1 py-7 bg-green-700 text-white p-8 rounded-xl">
+      <h2 class="text-2xl font-bold mb-6 text-center">Pencapaian Kami</h2>
+      <div class="grid md:grid-cols-4 gap-6 text-center">
+        <div class="bg-green-800 p-4 rounded-lg">
+          <div class="text-4xl font-bold mb-2">10+</div>
+          <div class="text-green-200">Sarana Ibadah Dibangun</div>
+        </div>
+        <div class="bg-green-800 p-4 rounded-lg">
+          <div class="text-4xl font-bold mb-2">15</div>
+          <div class="text-green-200">Kegiatan Keagamaan Didukung</div>
+        </div>
+        <div class="bg-green-800 p-4 rounded-lg">
+          <div class="text-4xl font-bold mb-2">1,000+</div>
+          <div class="text-green-200">Peserta Edukasi Keagamaan</div>
+        </div>
+        <div class="bg-green-800 p-4 rounded-lg">
+          <div class="text-4xl font-bold mb-2">5</div>
+          <div class="text-green-200">Forum Toleransi Diselenggarakan</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Structure -->
+    <div id="modalOverlay" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4">
+      <div id="modalContainer" class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto hidden">
+        <div class="p-6">
+          <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <div id="modalContent"></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+  <div id="footer-container"></div>
+  <script src="../main.js"></script>
+
+  <script>
+    // Data untuk modal
+    const programData = {
+      sarana_ibadah: {
+        title: "Pembangunan Sarana Ibadah",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+          </svg>`,
+        description: "Pembangunan dan renovasi masjid, gereja, dan tempat ibadah lainnya untuk mendukung kegiatan keagamaan masyarakat.",
+        content: `
+          <p class="mb-4">Program pembangunan sarana ibadah kami bertujuan untuk menyediakan fasilitas ibadah yang layak bagi masyarakat lintas agama di wilayah operasional perusahaan.</p>
+          <p class="mb-4">Kami telah membangun dan merenovasi 10 tempat ibadah, termasuk masjid, gereja, dan pura, di 8 desa binaan. Program ini melibatkan konsultasi dengan tokoh agama setempat untuk memastikan desain sesuai kebutuhan komunitas.</p>
+          <p class="mb-4">Hasilnya, akses ke sarana ibadah meningkat 60% di desa-desa binaan, mendukung kegiatan keagamaan yang lebih teratur dan nyaman.</p>
+          <p class="mb-4">Ke depan, kami berencana untuk merenovasi 5 tempat ibadah tambahan dan menyediakan fasilitas pendukung seperti perpustakaan keagamaan.</p>
+        `,
+        achievements: [
+          "10 tempat ibadah dibangun/renovasi",
+          "8 desa binaan",
+          "Peningkatan akses ibadah 60%",
+          "Keterlibatan tokoh agama"
+        ],
+        image: "https://images.unsplash.com/photo-1518819950720-294c45a0b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        status: "Berjalan",
+        period: "2023-2025"
+      },
+      kegiatan_keagamaan: {
+        title: "Kegiatan Keagamaan",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 005.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>`,
+        description: "Dukungan untuk perayaan hari besar keagamaan lintas agama untuk memperkuat harmoni sosial.",
+        content: `
+          <p class="mb-4">Program kegiatan keagamaan kami fokus pada dukungan logistik dan finansial untuk perayaan hari besar keagamaan seperti Idulfitri, Natal, dan Nyepi.</p>
+          <p class="mb-4">Kami telah mendukung 15 perayaan keagamaan di 10 desa, melibatkan lebih dari 2.000 warga. Program ini mencakup penyediaan bahan makanan, dekorasi, dan fasilitas acara.</p>
+          <p class="mb-4">Kami bekerja sama dengan tokoh lintas agama untuk memastikan kegiatan inklusif dan menghormati semua komunitas. Hasilnya, partisipasi warga dalam kegiatan keagamaan meningkat 50%.</p>
+          <p class="mb-4">Ke depan, kami berencana untuk mendukung festival keagamaan tahunan yang melibatkan seluruh komunitas lintas agama.</p>
+        `,
+        achievements: [
+          "15 perayaan didukung",
+          "2.000 warga terlibat",
+          "Peningkatan partisipasi 50%",
+          "Kerja sama tokoh lintas agama"
+        ],
+        image: "https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        status: "Rutin",
+        period: "Setiap Tahun"
+      },
+      edukasi_keagamaan: {
+        title: "Edukasi Keagamaan",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          </svg>`,
+        description: "Program pendidikan keagamaan untuk anak-anak dan remaja guna memperkuat nilai-nilai moral.",
+        content: `
+          <p class="mb-4">Program edukasi keagamaan kami bertujuan untuk memberikan pendidikan agama yang inklusif kepada anak-anak dan remaja di desa-desa binaan.</p>
+          <p class="mb-4">Kami telah menyelenggarakan kelas keagamaan untuk 1.000 anak dan remaja di 10 desa, dengan fokus pada nilai-nilai moral, toleransi, dan etika beragama.</p>
+          <p class="mb-4">Program ini bekerja sama dengan lembaga keagamaan lokal untuk menyusun kurikulum yang relevan dan inklusif. Hasilnya, 80% peserta menunjukkan pemahaman yang lebih baik tentang nilai-nilai keagamaan.</p>
+          <p class="mb-4">Ke depan, kami berencana untuk memperluas program ini dengan menambahkan kelas digital berbasis keagamaan untuk remaja.</p>
+        `,
+        achievements: [
+          "1.000 peserta teredukasi",
+          "80% pemahaman nilai keagamaan",
+          "Kelas di 10 desa",
+          "Kurikulum inklusif"
+        ],
+        image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        status: "Berjalan",
+        period: "2022-2024"
+      },
+      toleransi_antaragama: {
+        title: "Toleransi Antaragama",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 005.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>`,
+        description: "Dialog dan kegiatan untuk mempromosikan toleransi dan harmoni antarumat beragama.",
+        content: `
+          <p class="mb-4">Program toleransi antaragama kami bertujuan untuk membangun pemahaman dan harmoni antarumat beragama melalui dialog dan kegiatan bersama.</p>
+          <p class="mb-4">Kami telah menyelenggarakan 5 forum dialog lintas agama dengan 500 peserta dari berbagai komunitas agama. Program ini mencakup diskusi, kegiatan budaya, dan kunjungan antar tempat ibadah.</p>
+          <p class="mb-4">Kami bekerja sama dengan tokoh agama dan organisasi masyarakat untuk memastikan kegiatan inklusif. Hasilnya, tingkat toleransi antarumat beragama meningkat 70% di desa-desa binaan.</p>
+          <p class="mb-4">Ke depan, kami berencana untuk membentuk komunitas lintas agama untuk mengadakan kegiatan rutin tahunan.</p>
+        `,
+        achievements: [
+          "5 forum dialog diselenggarakan",
+          "500 peserta terlibat",
+          "Peningkatan toleransi 70%",
+          "Kegiatan budaya lintas agama"
+        ],
+        image: "https://images.unsplash.com/photo-1515169067868-5387ec356754?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        status: "Jangka Panjang",
+        period: "Sejak 2020"
+      },
+      beasiswa_keagamaan: {
+        title: "Beasiswa Keagamaan",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          </svg>`,
+        description: "Dukungan pendidikan untuk pelajar di lembaga keagamaan untuk memperkuat pendidikan berbasis nilai agama.",
+        content: `
+          <p class="mb-4">Program beasiswa keagamaan kami bertujuan untuk mendukung pendidikan pelajar di lembaga keagamaan seperti pesantren, sekolah minggu, dan vihara.</p>
+          <p class="mb-4">Kami telah memberikan beasiswa kepada 100 pelajar di 5 lembaga keagamaan, mencakup biaya pendidikan, buku, dan kebutuhan dasar lainnya.</p>
+          <p class="mb-4">Program ini bekerja sama dengan lembaga keagamaan lokal untuk memastikan bantuan tepat sasaran. Hasilnya, tingkat kelulusan peserta beasiswa meningkat 80%.</p>
+          <p class="mb-4">Ke depan, kami berencana untuk memperluas program ini dengan menambahkan beasiswa untuk 50 pelajar tambahan dan mendukung pelatihan guru keagamaan.</p>
+        `,
+        achievements: [
+          "100 pelajar menerima beasiswa",
+          "Tingkat kelulusan 80%",
+          "Kerja sama dengan 5 lembaga",
+          "Dukungan kebutuhan dasar"
+        ],
+        image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        status: "Pilot Project",
+        period: "2023-Sekarang"
+      },
+      kajian_lintas_agama: {
+        title: "Kajian Lintas Agama",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 005.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>`,
+        description: "Forum diskusi untuk mempromosikan pemahaman dan kerja sama antarumat beragama.",
+        content: `
+          <p class="mb-4">Program kajian lintas agama kami bertujuan untuk mempromosikan pemahaman dan kerja sama antarumat beragama melalui forum diskusi dan kegiatan bersama.</p>
+          <p class="mb-4">Kami berencana untuk menyelenggarakan 3 forum kajian lintas agama dengan 300 peserta pada tahap awal, dengan fokus pada nilai-nilai universal seperti kasih sayang, kedamaian, dan keadilan.</p>
+          <p class="mb-4">Program ini akan bekerja sama dengan tokoh agama dan akademisi untuk menyusun materi diskusi yang inklusif. Forum ini akan mencakup lokakarya dan kunjungan ke tempat ibadah lintas agama.</p>
+          <p class="mb-4">Ke depan, kami akan membentuk jaringan lintas agama untuk menyelenggarakan kegiatan rutin dan proyek sosial bersama.</p>
+        `,
+        achievements: [
+          "300 peserta target tahap awal",
+          "3 forum kajian direncanakan",
+          "Kerja sama dengan tokoh agama",
+          "Lokakarya lintas agama"
+        ],
+        image: "https://images.unsplash.com/photo-1515169067868-5387ec356754?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        status: "Rencana",
+        period: "2024-2026"
+      }
+    };
+
+    // Fungsi openModal
+    function openModal(programId) {
+      const program = programData[programId];
+      const modalContent = document.getElementById('modalContent');
+
+      modalContent.innerHTML = `
+        <div class="max-w-4xl mx-auto">
+          <div class="mb-8">
+            <img src="${program.image}" alt="${program.title}" class="w-full h-64 md:h-96 object-cover rounded-lg">
+          </div>
+          
+          <div class="flex items-center mb-4">
+            ${program.icon}
+            <h1 class="text-2xl font-bold text-gray-800">${program.title}</h1>
+          </div>
+          
+          <div class="flex items-center text-sm text-gray-500 mb-6">
+            <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full mr-3">${program.status}</span>
+            <span>${program.period}</span>
+          </div>
+          
+          <div class="prose max-w-none">
+            <p class="text-gray-600 mb-6">${program.description}</p>
+            ${program.content || ''}
+            
+            <div class="bg-green-50 p-6 rounded-lg mt-8">
+              <h3 class="text-lg font-semibold text-green-800 mb-3">Pencapaian:</h3>
+              <ul class="space-y-2">
+                ${program.achievements.map(a => `<li class="flex items-start">
+                  <span class="text-green-600 mr-2">✓</span>
+                  <span>${a}</span>
+                </li>`).join('')}
+              </ul>
+            </div>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('modalOverlay').classList.remove('hidden');
+      document.getElementById('modalContainer').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Fungsi closeModal
+    function closeModal() {
+      document.getElementById('modalOverlay').classList.add('hidden');
+      document.getElementById('modalContainer').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Tutup modal ketika klik di overlay
+    document.getElementById('modalOverlay').addEventListener('click', closeModal);
+
+    // Fungsi untuk menampilkan lightbox
+    function showLightbox(src, alt = '', caption = '') {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxCaption = document.getElementById('lightbox-caption');
+
+      lightboxImg.src = src;
+      lightboxImg.alt = alt;
+      lightboxCaption.textContent = caption;
+
+      lightbox.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Fungsi untuk menyembunyikan lightbox
+    function hideLightbox() {
+      document.getElementById('lightbox').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Tutup lightbox saat klik di luar gambar
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) {
+        hideLightbox();
+      }
+    });
+
+    // Carousel Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const carouselTrack = document.getElementById('cardContainer');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const dots = document.querySelectorAll('.dot-indicator');
+
+      if (!carouselTrack) return;
+
+      let currentIndex = 0;
+      const cards = document.querySelectorAll('.snap-start');
+      if (cards.length === 0) return;
+
+      const cardWidth = cards[0].offsetWidth + 24;
+      const visibleCards = window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 3;
+      const totalCards = cards.length;
+
+      function updateDots() {
+        dots.forEach((dot, index) => {
+          if (dot) {
+            dot.classList.toggle('bg-green-600', index === Math.floor(currentIndex / visibleCards));
+            dot.classList.toggle('bg-gray-300', index !== Math.floor(currentIndex / visibleCards));
+          }
+        });
+      }
+
+      function scrollToCard(index) {
+        currentIndex = Math.max(0, Math.min(index, totalCards - visibleCards));
+        carouselTrack.scrollTo({
+          left: currentIndex * cardWidth,
+          behavior: 'smooth'
+        });
+        updateDots();
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          scrollToCard(currentIndex + 1);
+        });
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          scrollToCard(currentIndex - 1);
+        });
+      }
+
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          const index = parseInt(dot.getAttribute('data-index'));
+          scrollToCard(index * visibleCards);
+        });
+      });
+
+      window.addEventListener('resize', () => {
+        scrollToCard(currentIndex);
+      });
+
+      updateDots();
+    });
+  </script>
+
+  <style>
+    #lightbox {
+      transition: opacity 0.3s ease;
+    }
+
+    #lightbox:not(.hidden) {
+      display: flex !important;
+    }
+
+    #modalContainer {
+      transition: all 0.3s ease-out;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    #modalContainer:not(.hidden) {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</body>
+</html>

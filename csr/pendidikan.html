@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSR Pendidikan | Kerinci Merangin Hidro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              '50': '#f0fdf4',
+              '100': '#dcfce7',
+              '200': '#bbf7d0',
+              '300': '#86efac',
+              '400': '#4ade80',
+              '500': '#22c55e',
+              '600': '#16a34a',
+              '700': '#15803d',
+              '800': '#166534',
+              '900': '#14532d'
+            },
+          },
+          backgroundImage: {
+            'education-pattern': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 15l8 8-8 8-8-8 8-8zm0 30l8-8-8-8-8 8 8 8z' fill='%234ade80' fill-opacity='0.1'/%3E%3Cpath d='M15 30l8-8 8 8-8 8-8-8zm30 0l8-8 8 8-8 8-8-8z' fill='%2322c55e' fill-opacity='0.1'/%3E%3C/svg%3E\")"
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      background: linear-gradient(to bottom,
+          #16a34a 0%,
+          /* green-600 */
+          #15803d 25%,
+          /* green-700 */
+          #166534 50%,
+          /* green-800 */
+          #14532d 75%,
+          /* green-900 */
+          #052e16 100%
+          /* green-950 */
+        );
+      min-height: 100vh;
+      margin: 0;
+      background-attachment: fixed;
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .snap-start {
+      scroll-snap-align: start;
+    }
+
+    /* Animasi untuk modal */
+    #modalContainer {
+      transition: all 0.3s ease-out;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    #modalContainer:not(.hidden) {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #lightbox {
+      transition: opacity 0.3s ease;
+    }
+
+    #lightbox:not(.hidden) {
+      display: flex !important;
+    }
+  </style>
+  
+</head>
+
+<body class="bg-green-50 text-gray-800">
+  <div id="navbar-container"></div>
+  
+  <!-- HEADER -->
+  <header class="bg-gradient-to-r from-green-800 to-green-700 text-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-4 py-6">
+      <h1 class="text-3xl font-bold text-center">CSR Bidang Pendidikan & Pemberdayaan</h1>
+      <p class="text-green-100 mt-2 text-center">Komitmen kami terhadap peningkatan kualitas pendidikan, beasiswa, dan pembangunan fasilitas pendidikan berkelanjutan.</p>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="bg-gradient-to-br from-green-600 to-green-800 text-white py-14">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 mb-8 md:mb-0">
+        <h2 class="text-3xl font-bold mb-4">Membangun Masa Depan Melalui Pendidikan</h2>
+        <p class="text-green-100 mb-6">PT Kerinci Merangin Hidro berkomitmen untuk meningkatkan kualitas pendidikan di wilayah operasional kami, memberikan akses pendidikan yang merata, dan membangun kapasitas sumber daya manusia yang berkualitas.</p>
+      </div>
+      <div class="md:w-1/2">
+        <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+          alt="Pendidikan Anak" class="w-full rounded-lg shadow-xl">
+      </div>
+    </div>
+  </section>
+
+  <!-- VISI MISI -->
+  <section class="bg-green-800 text-white py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-green-900 p-6 rounded-lg shadow-lg">
+          <h2 class="text-2xl font-bold mb-4 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+            Visi Pendidikan
+          </h2>
+          <p class="text-green-100">Menjadi katalis dalam mencerdaskan bangsa melalui program pendidikan berkelanjutan yang berkualitas, inklusif, dan berdampak positif bagi pembangunan masyarakat lokal.</p>
+        </div>
+        <div class="bg-green-900 p-6 rounded-lg shadow-lg">
+          <h2 class="text-2xl font-bold mb-4 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+            </svg>
+            Misi Pendidikan
+          </h2>
+          <ul class="text-green-100 space-y-2">
+            <li class="flex items-start"><span class="mr-2">•</span> Membangun dan merenovasi fasilitas pendidikan</li>
+            <li class="flex items-start"><span class="mr-2">•</span> Memberikan beasiswa bagi siswa berprestasi</li>
+            <li class="flex items-start"><span class="mr-2">•</span> Melaksanakan program pelatihan keterampilan</li>
+            <li class="flex items-start"><span class="mr-2">•</span> Menyediakan perpustakaan dan laboratorium modern</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTEN UTAMA -->
+  <main class="max-w-6xl mx-auto px-4 pt-12 pb-12" id="program">
+
+    <!-- Program Unggulan -->
+    <section class="pt-12 pb-16 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-yellow-300 mb-4">Program Unggulan Kami</h2>
+          <div class="w-20 h-1 bg-green-600 mx-auto mb-6"></div>
+        </div>
+
+        <!-- Container with Navigation Buttons -->
+        <div class="relative">
+          <!-- Navigation Buttons -->
+          <button id="prevBtn" class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 z-10 w-10 h-10 items-center justify-center rounded-full bg-white shadow-lg hover:bg-green-50 text-green-600 transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          <button id="nextBtn" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 z-10 w-10 h-10 items-center justify-center rounded-full bg-white shadow-lg hover:bg-green-50 text-green-600 transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          <!-- Card Container -->
+          <div id="cardContainer" class="grid grid-flow-col auto-cols-[85%] md:auto-cols-[45%] lg:auto-cols-[30%] gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-8 px-2 scrollbar-hide">
+
+            <!-- Card 1 -->
+            <div class="snap-start">
+              <button onclick="openModal('beasiswa')" class="w-full group text-left bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2 focus:outline-none">
+                <div class="aspect-w-16 aspect-h-10 relative">
+                  <img class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                    src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                    alt="Program Beasiswa">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <span class="absolute top-4 right-4 bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                    Berjalan
+                  </span>
+                </div>
+                <div class="p-6">
+                  <div class="mb-3">
+                    <span class="text-green-600 text-sm font-medium">2023-2025</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight">Program Beasiswa</h3>
+                  <p class="text-gray-600 mb-5 leading-relaxed">
+                    Bantuan pendidikan untuk 100 siswa berprestasi dari keluarga kurang mampu.
+                  </p>
+                </div>
+              </button>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="snap-start">
+              <button onclick="openModal('infrastruktur')" class="w-full group text-left bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2 focus:outline-none">
+                <div class="aspect-w-16 aspect-h-10 relative">
+                  <img class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                    src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                    alt="Pembangunan Sekolah">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <span class="absolute top-4 right-4 bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                    Jangka Panjang
+                  </span>
+                </div>
+                <div class="p-6">
+                  <div class="mb-3">
+                    <span class="text-green-600 text-sm font-medium">Sejak 2020</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight">Infrastruktur Sekolah</h3>
+                  <p class="text-gray-600 mb-5 leading-relaxed">
+                    Pembangunan dan renovasi gedung sekolah di 8 desa terpencil.
+                  </p>
+                </div>
+              </button>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="snap-start">
+              <button onclick="openModal('perpustakaan')" class="w-full group text-left bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2 focus:outline-none">
+                <div class="aspect-w-16 aspect-h-10 relative">
+                  <img class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                    alt="Perpustakaan Digital">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <span class="absolute top-4 right-4 bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                    Rutin
+                  </span>
+                </div>
+                <div class="p-6">
+                  <div class="mb-3">
+                    <span class="text-green-600 text-sm font-medium">Setiap Tahun</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight">Perpustakaan Digital</h3>
+                  <p class="text-gray-600 mb-5 leading-relaxed">
+                    Pendirian perpustakaan modern dengan akses internet dan e-book.
+                  </p>
+                </div>
+              </button>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="snap-start">
+              <button onclick="openModal('pelatihan')" class="w-full group text-left bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2 focus:outline-none">
+                <div class="aspect-w-16 aspect-h-10 relative">
+                  <img class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                    alt="Pelatihan Guru">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <span class="absolute top-4 right-4 bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                    Berjalan
+                  </span>
+                </div>
+                <div class="p-6">
+                  <div class="mb-3">
+                    <span class="text-green-600 text-sm font-medium">2022-2024</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight">Pelatihan Guru</h3>
+                  <p class="text-gray-600 mb-5 leading-relaxed">
+                    Program upgrading kompetensi guru di bidang teknologi pendidikan.
+                  </p>
+                </div>
+              </button>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="snap-start">
+              <button onclick="openModal('vokasi')" class="w-full group text-left bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2 focus:outline-none">
+                <div class="aspect-w-16 aspect-h-10 relative">
+                  <img class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                    src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                    alt="Pendidikan Vokasi">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <span class="absolute top-4 right-4 bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                    Pilot Project
+                  </span>
+                </div>
+                <div class="p-6">
+                  <div class="mb-3">
+                    <span class="text-green-600 text-sm font-medium">2023-Sekarang</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight">Pendidikan Vokasi</h3>
+                  <p class="text-gray-600 mb-5 leading-relaxed">
+                    Program keahlian teknik dan keterampilan untuk remaja putus sekolah.
+                  </p>
+                </div>
+              </button>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="snap-start">
+              <button onclick="openModal('literasi')" class="w-full group text-left bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2 focus:outline-none">
+                <div class="aspect-w-16 aspect-h-10 relative">
+                  <img class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                    src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                    alt="Literasi Digital">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <span class="absolute top-4 right-4 bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                    Rencana
+                  </span>
+                </div>
+                <div class="p-6">
+                  <div class="mb-3">
+                    <span class="text-green-600 text-sm font-medium">2024-2026</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight">Literasi Digital</h3>
+                  <p class="text-gray-600 mb-5 leading-relaxed">
+                    Program penguasaan teknologi informasi untuk semua kalangan.
+                  </p>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galeri Foto -->
+    <section class="pb-16 pt-20 rounded-xl shadow-md">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl font-bold text-yellow-300 mb-3">Aksi Nyata Untuk Pendidikan</h2>
+          <div class="w-16 h-1 bg-green-600 mx-auto mb-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Item 1 - Pemberian Beasiswa -->
+          <div class="group relative block overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-green-100 cursor-pointer" onclick="showLightbox('httpss//images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')">
+            <div class="aspect-w-4 aspect-h-3">
+              <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                alt="Pemberian beasiswa"
+                class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-green-900/70 via-transparent to-transparent flex items-end p-5">
+              <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <span class="inline-block px-3 py-1 bg-green-600 text-white text-xs font-medium rounded-full mb-2">2023</span>
+                <h3 class="text-xl font-semibold text-white">Program Beasiswa</h3>
+                <p class="text-green-100 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Memberikan beasiswa kepada 50 siswa berprestasi
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 - Pembangunan Sekolah -->
+          <div class="group relative block overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-green-100 cursor-pointer" onclick="showLightbox('https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')">
+            <div class="aspect-w-4 aspect-h-3">
+              <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                alt="Pembangunan gedung sekolah"
+                class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-green-900/70 via-transparent to-transparent flex items-end p-5">
+              <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <span class="inline-block px-3 py-1 bg-green-600 text-white text-xs font-medium rounded-full mb-2">2023</span>
+                <h3 class="text-xl font-semibold text-white">Gedung Sekolah Baru</h3>
+                <p class="text-green-100 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Membangun 3 gedung sekolah di daerah terpencil
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 - Pelatihan Guru -->
+          <div class="group relative block overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-green-100 cursor-pointer" onclick="showLightbox('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')">
+            <div class="aspect-w-4 aspect-h-3">
+              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                alt="Workshop untuk guru"
+                class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-green-900/70 via-transparent to-transparent flex items-end p-5">
+              <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <span class="inline-block px-3 py-1 bg-green-600 text-white text-xs font-medium rounded-full mb-2">2024</span>
+                <h3 class="text-xl font-semibold text-white">Pelatihan Guru</h3>
+                <p class="text-green-100 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Workshop metodologi pembelajaran modern untuk 100 guru
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4 - Konservasi Satwa -->
+          <div class="group relative block overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-green-100 cursor-pointer" onclick="showLightbox('/images/1.jpg')">
+            <div class="aspect-w-4 aspect-h-3">
+              <img src="https://images.unsplash.com/photo-1511497584788-876760111969?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                alt="Kegiatan konservasi burung"
+                class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-green-900/70 via-transparent to-transparent flex items-end p-5">
+              <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <span class="inline-block px-3 py-1 bg-green-600 text-white text-xs font-medium rounded-full mb-2">2024</span>
+                <h3 class="text-xl font-semibold text-white">Habitat Satwa</h3>
+                <p class="text-green-100 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Pemulihan habitat untuk 15 spesies burung langka
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox Element -->
+    <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden items-center justify-center">
+      <div class="relative max-w-4xl w-full">
+        <button onclick="hideLightbox()" class="absolute -top-12 right-0 text-white hover:text-gray-300">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <img id="lightbox-img" src="" alt="" class="w-full max-h-[90vh] object-contain">
+        <p id="lightbox-caption" class="text-white text-center mt-2"></p>
+      </div>
+    </div>
+
+    <!-- Pencapaian -->
+    <section class="mt-16 mb-1 py-7 bg-green-700 text-white p-8 rounded-xl">
+      <h2 class="text-2xl font-bold mb-6 text-center">Pencapaian Kami</h2>
+      <div class="grid md:grid-cols-4 gap-6 text-center">
+        <div class="bg-green-800 p-4 rounded-lg">
+          <div class="text-4xl font-bold mb-2">10,000+</div>
+          <div class="text-green-200">Pohon Tertanam</div>
+        </div>
+        <div class="bg-green-800 p-4 rounded-lg">
+          <div class="text-4xl font-bold mb-2">5 Ton</div>
+          <div class="text-green-200">Sampah Terkelola</div>
+        </div>
+        <div class="bg-green-800 p-4 rounded-lg">
+          <div class="text-4xl font-bold mb-2">15+</div>
+          <div class="text-green-200">Desa Terlibat</div>
+        </div>
+        <div class="bg-green-800 p-4 rounded-lg">
+          <div class="text-4xl font-bold mb-2">3</div>
+          <div class="text-green-200">Spesies Dilindungi</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Structure -->
+    <div id="modalOverlay" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4">
+      <div id="modalContainer" class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto hidden">
+        <div class="p-6">
+          <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <div id="modalContent"></div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </main>
+  <div id="footer-container"></div>
+  <script src="../main.js"></script>
+</body>
+
+<script>
+  // Data untuk modal
+  const programData = {
+    reboisasi: {
+      title: "Reboisasi Hutan Desa",
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>`,
+      description: "Program ini bertujuan untuk memulihkan ekosistem hutan yang telah mengalami kerusakan di sekitar wilayah operasional perusahaan.",
+      content: `
+        <p class="mb-4">Program reboisasi hutan desa kami dimulai sebagai respons terhadap meningkatnya laju deforestasi di wilayah sekitar operasional perusahaan. Dalam kurun waktu 2 tahun terakhir, kami telah melakukan assessment menyeluruh untuk mengidentifikasi area-area kritis yang paling membutuhkan intervensi.</p>
+        
+        <p class="mb-4">Berdasarkan penelitian tim ekologi kami, setiap hektar hutan yang direboisasi dapat menyerap sekitar 6 ton CO2 per tahun. Tidak hanya bermanfaat untuk mitigasi perubahan iklim, program ini juga membantu memulihkan siklus hidrologi dan mencegah erosi tanah di daerah lereng.</p>
+        
+        <p class="mb-4">Kami bekerja sama dengan masyarakat lokal dalam setiap tahap program, mulai dari pembibitan, penanaman, hingga pemeliharaan. Pendekatan partisipatif ini tidak hanya meningkatkan keberlanjutan program tetapi juga menciptakan lapangan kerja bagi warga sekitar.</p>
+        
+        <p class="mb-4">Ke depan, kami berkomitmen untuk memperluas cakupan program hingga mencakup 10 desa tambahan dalam 3 tahun mendatang. Target kami adalah menanam minimal 50.000 pohon endemik dengan tingkat keberhasilan tumbuh di atas 85%.</p>
+      `,
+      achievements: [
+        "Telah menanam 10.000 bibit pohon endemik",
+        "Melibatkan 5 desa sekitar",
+        "Pemantauan pertumbuhan pohon rutin",
+        "Meningkatkan tutupan hutan sebesar 30%"
+      ],
+      image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      status: "Berjalan",
+      period: "2023-2025"
+    },
+    satwa: {
+      title: "Konservasi Satwa Terancam",
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>`,
+      description: "Program perlindungan dan pelestarian satwa endemik yang terancam punah di wilayah Kerinci dan Merangin.",
+      content: `
+        <p class="mb-4">Program konservasi satwa kami fokus pada tiga spesies kunci yang statusnya terancam punah menurut IUCN, yaitu Harimau Sumatera, Gajah Sumatera, dan Burung Enggang. Masing-masing spesies ini memainkan peran penting dalam menjaga keseimbangan ekosistem hutan Sumatera.</p>
+        
+        <p class="mb-4">Kami membangun pusat rehabilitasi satwa seluas 15 hektar yang dilengkapi dengan fasilitas karantina, klinik kesehatan hewan, dan area habituasi. Tim veteriner kami bekerja sama dengan ahli ekologi untuk memastikan proses rehabilitasi sesuai dengan kebutuhan biologis masing-masing spesies.</p>
+        
+        <p class="mb-4">Selain upaya konservasi ex-situ, kami juga melakukan patroli rutin kawasan hutan untuk mencegah perburuan liar. Hingga saat ini telah berhasil disita lebih dari 50 perangkap ilegal dan diajukan 8 kasus ke meja hijau.</p>
+        
+        <p class="mb-4">Program pelepasliaran satwa rehabilitasi dilakukan setelah melalui serangkaian tes kesiapan yang ketat. Kami menggunakan teknologi GPS collar untuk memantau pergerakan satwa yang telah dilepasliarkan selama minimal 1 tahun pasca pelepasliaran.</p>
+      `,
+      achievements: [
+        "3 pusat rehabilitasi satwa dibangun",
+        "Kerja sama dengan 2 LSM lingkungan",
+        "Program pelepasliaran satwa rehabilitasi",
+        "Penurunan 40% aktivitas perburuan liar"
+      ],
+      image: "https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      status: "Jangka Panjang",
+      period: "Sejak 2020"
+    },
+    sungai: {
+      title: "Revitalisasi Sungai",
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+        </svg>`,
+      description: "Program pemulihan ekosistem sungai melalui pengelolaan sampah dan rehabilitasi daerah aliran sungai.",
+      content: `
+        <p class="mb-4">Program revitalisasi sungai kami dimulai dengan pemetaan 15 titik kritis sepanjang 12 km aliran sungai. Pemetaan ini mengidentifikasi sumber-sumber pencemar utama dan area yang membutuhkan intervensi segera.</p>
+        
+        <p class="mb-4">Setiap bulan, kami mengorganisir aksi bersih sungai yang melibatkan rata-rata 150 relawan. Dalam 2 tahun terakhir, telah terkumpul lebih dari 8 ton sampah yang kemudian diproses melalui bank sampah binaan kami.</p>
+        
+        <p class="mb-4">Kami juga melakukan penanaman vegetasi riparian di sepanjang bantaran sungai. Jenis tanaman dipilih khusus untuk memperkuat struktur tanah dan menyaring limpasan dari area pertanian di sekitarnya.</p>
+        
+        <p class="mb-4">Indikator keberhasilan program terlihat dari peningkatan kualitas air berdasarkan parameter BOD dan COD, serta kembalinya beberapa spesies ikan lokal yang sempat menghilang dari aliran sungai ini.</p>
+      `,
+      achievements: [
+        "5 ton sampah terkelola per tahun",
+        "Pemetaan 15 titik kritis",
+        "Peningkatan kualitas air sungai",
+        "Kembalinya 5 spesies ikan lokal"
+      ],
+      image: "https://images.unsplash.com/photo-1437957146754-f6377debe171?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      status: "Rutin",
+      period: "Setiap Bulan"
+    },
+    edukasi: {
+      title: "Edukasi Lingkungan",
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+        </svg>`,
+      description: "Program pelatihan dan workshop tentang konservasi untuk masyarakat dan pelajar.",
+      content: `
+        <p class="mb-4">Program edukasi lingkungan kami dirancang untuk meningkatkan kesadaran masyarakat akan pentingnya pelestarian alam. Kami menyelenggarakan berbagai kegiatan mulai dari workshop untuk dewasa hingga program sekolah alam untuk anak-anak.</p>
+        
+        <p class="mb-4">Materi yang diajarkan mencakup pengelolaan sampah, konservasi air, keanekaragaman hayati, dan perubahan iklim. Kami menggunakan pendekatan pembelajaran partisipatif dengan 70% praktik lapangan dan 30% teori.</p>
+        
+        <p class="mb-4">Untuk kalangan pelajar, kami mengembangkan modul pembelajaran berbasis proyek yang disesuaikan dengan kurikulum sekolah. Hingga saat ini telah terbentuk 15 kelompok pecinta alam di sekolah-sekolah binaan kami.</p>
+        
+        <p class="mb-4">Program unggulan kami adalah 'Sekolah Lapang Konservasi' yang diadakan setiap bulan dengan peserta dari berbagai kalangan. Evaluasi menunjukkan peningkatan 65% pemahaman peserta tentang isu lingkungan setelah mengikuti program ini.</p>
+      `,
+      achievements: [
+        "1500 peserta terlatih",
+        "15 kelompok pecinta alam sekolah",
+        "Modul pembelajaran konservasi",
+        "Peningkatan 65% pemahaman peserta"
+      ],
+      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      status: "Berjalan",
+      period: "2022-2024"
+    },
+    pertanian: {
+      title: "Pertanian Berkelanjutan",
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+        </svg>`,
+      description: "Pengembangan metode pertanian organik yang ramah lingkungan dan efisien.",
+      content: `
+        <p class="mb-4">Program pertanian berkelanjutan kami memperkenalkan teknik-teknik pertanian modern yang ramah lingkungan kepada petani lokal. Fokus utama kami adalah pada sistem pertanian organik dan agroforestri yang mengintegrasikan tanaman pangan dengan tanaman keras.</p>
+        
+        <p class="mb-4">Kami telah mengembangkan demplot pertanian seluas 5 hektar yang menjadi pusat pembelajaran bagi petani. Di sini, petani dapat mempelajari berbagai teknik seperti rotasi tanaman, pengendalian hama alami, dan pengelolaan tanah berkelanjutan.</p>
+        
+        <p class="mb-4">Salah satu inovasi kami adalah sistem irigasi tetes berbasis energi surya yang mampu menghemat penggunaan air hingga 60%. Sistem ini telah diadopsi oleh 45 petani binaan kami dengan hasil panen meningkat rata-rata 30%.</p>
+        
+        <p class="mb-4">Ke depan, kami berencana memperluas program ini dengan membentuk koperasi petani organik yang akan membantu pemasaran hasil pertanian dengan harga premium sekaligus menjamin keberlanjutan ekonomi bagi petani.</p>
+      `,
+      achievements: [
+        "5 hektar demplot pertanian",
+        "45 petani binaan",
+        "Penghematan air 60%",
+        "Peningkatan hasil panen 30%"
+      ],
+      image: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      status: "Pilot Project",
+      period: "2023-Sekarang"
+    },
+    energi: {
+      title: "Energi Terbarukan",
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>`,
+      description: "Implementasi pembangkit listrik tenaga mikrohidro untuk desa-desa terpencil.",
+      content: `
+        <p class="mb-4">Program energi terbarukan kami bertujuan menyediakan akses listrik bersih bagi masyarakat di daerah terpencil yang belum terjangkau jaringan listrik nasional. Teknologi utama yang kami kembangkan adalah Pembangkit Listrik Tenaga Mikrohidro (PLTMH).</p>
+        
+        <p class="mb-4">Tahap pertama program ini akan membangun 3 unit PLTMH di 3 desa terpencil. Setiap unit mampu menghasilkan 15-20 kW, cukup untuk memenuhi kebutuhan dasar 50-70 rumah tangga. Pembangunan melibatkan masyarakat lokal dalam setiap tahapannya.</p>
+        
+        <p class="mb-4">Selain PLTMH, kami juga mengembangkan sistem hybrid yang mengombinasikan energi surya dan mikrohidro untuk menjamin pasokan listrik yang stabil sepanjang tahun. Sistem ini dilengkapi dengan baterai penyimpan energi berkapasitas 50 kWh.</p>
+        
+        <p class="mb-4">Program ini tidak hanya menyediakan listrik tetapi juga membentuk kelompok masyarakat pengelola energi yang bertanggung jawab atas operasi dan pemeliharaan sistem. Pelatihan teknis diberikan selama 6 bulan sebelum sistem diserahkan ke masyarakat.</p>
+      `,
+      achievements: [
+        "3 desa target awal",
+        "Kapasitas 15-20 kW per unit",
+        "Sistem hybrid energi terbarukan",
+        "50 rumah tangga terjangkau per desa"
+      ],
+      image: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      status: "Rencana",
+      period: "2024-2026"
+    }
+  };
+
+  // Fungsi openModal, closeModal, dan event listener tetap sama seperti sebelumnya
+  function openModal(programId) {
+    const program = programData[programId];
+    const modalContent = document.getElementById('modalContent');
+
+    modalContent.innerHTML = `
+      <div class="max-w-4xl mx-auto">
+        <div class="mb-8">
+          <img src="${program.image}" alt="${program.title}" class="w-full h-64 md:h-96 object-cover rounded-lg">
+        </div>
+        
+        <div class="flex items-center mb-4">
+          ${program.icon}
+          <h1 class="text-2xl font-bold text-gray-800">${program.title}</h1>
+        </div>
+        
+        <div class="flex items-center text-sm text-gray-500 mb-6">
+          <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full mr-3">${program.status}</span>
+          <span>${program.period}</span>
+        </div>
+        
+        <div class="prose max-w-none">
+          <p class="text-gray-600 mb-6">${program.description}</p>
+          ${program.content || ''}
+          
+          <div class="bg-green-50 p-6 rounded-lg mt-8">
+            <h3 class="text-lg font-semibold text-green-800 mb-3">Pencapaian:</h3>
+            <ul class="space-y-2">
+              ${program.achievements.map(a => `<li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>${a}</span>
+              </li>`).join('')}
+            </ul>
+          </div>
+        </div>
+      </div>
+    `;
+
+    document.getElementById('modalOverlay').classList.remove('hidden');
+    document.getElementById('modalContainer').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('modalOverlay').classList.add('hidden');
+    document.getElementById('modalContainer').classList.add('hidden');
+    document.body.style.overflow = 'auto';
+  }
+
+  // Tutup modal ketika klik di overlay
+  document.getElementById('modalOverlay').addEventListener('click', closeModal);
+</script>
+
+<script>
+  // Fungsi untuk menampilkan lightbox
+  function showLightbox(src, alt = '', caption = '') {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+
+    lightboxImg.src = src;
+    lightboxImg.alt = alt;
+    lightboxCaption.textContent = caption;
+
+    lightbox.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  // Fungsi untuk menyembunyikan lightbox
+  function hideLightbox() {
+    document.getElementById('lightbox').classList.add('hidden');
+    document.body.style.overflow = 'auto';
+  }
+
+  // Tutup lightbox saat klik di luar gambar
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) {
+      hideLightbox();
+    }
+  });
+</script>
+
+<style>
+  #lightbox {
+    transition: opacity 0.3s ease;
+  }
+
+  #lightbox:not(.hidden) {
+    display: flex !important;
+  }
+</style>
+
+<style>
+  /* Animasi untuk modal */
+  #modalContainer {
+    transition: all 0.3s ease-out;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  #modalContainer:not(.hidden) {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  // Carousel Functionality - Perbaikan
+  document.addEventListener('DOMContentLoaded', function() {
+    const carouselTrack = document.getElementById('cardContainer');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const dots = document.querySelectorAll('.dot-indicator');
+
+    if (!carouselTrack) return; // Pastikan elemen ada
+
+    let currentIndex = 0;
+    const cards = document.querySelectorAll('.snap-start');
+    if (cards.length === 0) return;
+
+    const cardWidth = cards[0].offsetWidth + 24; // card width + gap
+    const visibleCards = window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 3;
+    const totalCards = cards.length;
+
+    // Update dots indicator
+    function updateDots() {
+      dots.forEach((dot, index) => {
+        if (dot) {
+          dot.classList.toggle('bg-green-600', index === Math.floor(currentIndex / visibleCards));
+          dot.classList.toggle('bg-gray-300', index !== Math.floor(currentIndex / visibleCards));
+        }
+      });
+    }
+
+    // Scroll to card
+    function scrollToCard(index) {
+      currentIndex = Math.max(0, Math.min(index, totalCards - visibleCards));
+      carouselTrack.scrollTo({
+        left: currentIndex * cardWidth,
+        behavior: 'smooth'
+      });
+      updateDots();
+    }
+
+    // Navigation buttons
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        scrollToCard(currentIndex + 1);
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        scrollToCard(currentIndex - 1);
+      });
+    }
+
+    // Dot navigation
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const index = parseInt(dot.getAttribute('data-index'));
+        scrollToCard(index * visibleCards);
+      });
+    });
+
+    // Responsive adjustments
+    window.addEventListener('resize', () => {
+      scrollToCard(currentIndex); // Reset position on resize
+    });
+
+    // Initialize
+    updateDots();
+  });
+</script>
+
+
+
+</html>

@@ -164,7 +164,7 @@
   const dropdownItems = {
     sport: [{
         name: "Badminton",
-        href: "#badminton"
+        href: "{{ route('badminton') }}"
       },
       {
         name: "Futsal",
@@ -172,16 +172,20 @@
       },
       {
         name: "Basket",
-        href: "#basket"
+        href: "{{ route('basket') }}"
       },
       {
-        name: "Tenis Meja",
-        href: "#tenis-meja"
+        name: "Tennis Meja",
+        href: "{{ route('tennis-meja') }}"
       },
       {
-        name: "Voli Pantai",
-        href: "#voli-pantai"
-      }
+        name: "Voli",
+        href: "{{ route('voli') }}"
+      },
+      {
+        name: "Mobile Legends",
+        href: "{{ route('mobile-legends') }}"
+      },
     ],
     event: [
       {
@@ -199,44 +203,29 @@
     ],
     traveling: [{
         name: "Gunung Kerinci",
-        href: "#gunung-kerinci"
-      },
-      {
-        name: "Bukit Tinggi",
-        href: "#bukit-tinggi"
-      },
-      {
-        name: "Air Terjun Telun",
-        href: "#air-terjun"
+        href: "{{ route('gunung-kerinci') }}"
       },
       {
         name: "Danau Kaco",
-        href: "#danau-kaco"
+        href: "{{ route('danau-kaco') }}"
       },
       {
         name: "Trip Camping",
-        href: "#camping"
+        href: "{{ route('camping') }}"
       }
     ],
-    health: [{
-        name: "Yoga Pagi",
-        href: "#yoga"
-      },
-      {
-        name: "Sit Up Challenge",
-        href: "#situp"
-      },
+    health: [
       {
         name: "Senam Sehat",
-        href: "#senam"
+        href: "{{ route('senam') }}"
       },
       {
         name: "Jalan Pagi",
-        href: "#jalan-pagi"
+        href: "{{ route('jalan') }}"
       },
       {
         name: "Pola Makan Sehat",
-        href: "#makanan-sehat"
+        href: "{{ route('makan') }}"
       }
     ],
     csr: [{
@@ -245,35 +234,35 @@
       },
       {
         name: "Kewirausahaan",
-        href: "#kewirausahaan"
+        href: "{{ route('kewirausahaan') }}"
       },
       {
         name: "Kesehatan",
-        href: "#kesehatan"
+        href: "{{ route('kesehatan') }}"
       },
       {
         name: "Sanitasi & Air Bersih",
-        href: "#sanitasi"
+        href: "{{ route('sanitasi') }}"
       },
       {
         name: "Sosial & Mitigasi",
-        href: "sosial"
+        href: "{{ route('sosial') }}"
       },
       {
         name: "Pendidikan",
-        href: "#pendidikan"
+        href: "{{ route('pendidikan') }}"
       },
       {
         name: "Infrastruktur",
-        href: "#infrastruktur"
+        href: "{{ route('infrastruktur') }}"
       },
       {
         name: "Keagamaan",
-        href: "#keagamaan"
+        href: "{{ route('keagamaan') }}"
       },
       {
         name: "Kepemudaan & Pariwisata",
-        href: "#kepemudaan"
+        href: "{{ route('kepemudaan') }}"
       }
     ]
   };

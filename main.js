@@ -28,8 +28,8 @@ function setupNavbarDropdown() {
     ],
     csr: [
       { name: "Lingkungan dan Kehutanan", href: "/csr/lingkungan.html" },
-      { name: "Kewirausahaan", href: "/csr/Kewirausahaan.html" },
-      { name: "Kesehatan", href: "/csr/Kesehatan.html" },
+      { name: "Kewirausahaan", href: "/csr/kewirausahaan.html" },
+      { name: "Kesehatan", href: "/csr/kesehatan.html" },
       { name: "Sanitasi & Air Bersih", href: "/csr/sanitasi.html" },
       { name: "Sosial & Mitigasi", href: "/csr/sosial.html" },
       { name: "Pendidikan", href: "/csr/pendidikan.html" },

@@ -13,7 +13,7 @@ function setupNavbarDropdown() {
     ],
     event: [
       { name: "", href: "#coming-soon" },
-      { name: "KMH Event", href: "event.html" },
+      { name: "KMH Event", href: "/event.html" },
       { name: "", href: "#coming-soon" },
     ],
     traveling: [

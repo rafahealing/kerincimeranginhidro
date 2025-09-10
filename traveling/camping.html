@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trip Camping - Traveling Bersama KMH</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    .hero-overlay {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+    }
+
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    .parallax {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .floating {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .stat-card {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .stat-card:hover {
+      transform: scale(1.05);
+    }
+
+    .activity-icon {
+      transition: all 0.3s ease;
+    }
+
+    .activity-card:hover .activity-icon {
+      transform: scale(1.2);
+      color: #059669;
+    }
+
+    .cta-section {
+      background: linear-gradient(135deg, #059669 0%, #047857 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23059669' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+    }
+
+    /* Gallery Section */
+    .gallery-section {
+      padding: 5rem 0;
+      background-color: #f9fafb;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1f4037;
+      margin-bottom: 1rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(to right, #1f4037, #99f2c8);
+      border-radius: 2px;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+
+    /* Gallery Grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 1rem;
+    }
+
+    /* Gallery Item */
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s ease;
+      cursor: pointer;
+      border: 1px solid rgba(79, 209, 146, 0.3);
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      border-color: #4fd192;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(31, 64, 55, 0.85) 0%, transparent 100%);
+      padding: 1.5rem;
+      color: white;
+      transform: translateY(10px);
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      transform: translateY(0);
+    }
+
+    .gallery-year {
+      display: inline-block;
+      background-color: #4fd192;
+      color: white;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 0.8rem;
+    }
+
+    .gallery-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .gallery-desc {
+      font-size: 0.95rem;
+      opacity: 0;
+      max-height: 0;
+      transition: all 0.4s ease;
+      line-height: 1.5;
+    }
+
+    .gallery-item:hover .gallery-desc {
+      opacity: 1;
+      max-height: 100px;
+    }
+
+    /* View More Button */
+    .view-more {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .view-more-btn {
+      display: inline-flex;
+      align-items: center;
+      background: linear-gradient(to right, #1f4037, #4fd192);
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding: 0.9rem 1.8rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(31, 64, 55, 0.2);
+    }
+
+    .view-more-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(31, 64, 55, 0.3);
+    }
+
+    .view-more-btn i {
+      margin-left: 0.6rem;
+      transition: transform 0.3s ease;
+    }
+
+    .view-more-btn:hover i {
+      transform: translateX(5px);
+    }
+
+    /* Container for centering content */
+    .container {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  </style>
+</head>
+
+<body class="text-gray-800 bg-gray-50">
+
+  <div id="navbar-container"></div>
+
+  <!-- Hero Section -->
+  <section class="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
+        alt="Trip Camping"
+        class="w-full h-full object-cover">
+      <div class="absolute inset-0 hero-overlay"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6" data-aos="fade-up" data-aos-duration="1500">
+      <h1 class="text-5xl md:text-7xl font-bold mb-6">Trip Camping</h1>
+      <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Rasakan Petualangan Malam di Alam Bersama KMH</p>
+      <a href="#info" class="inline-block bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-medium shadow-lg transition-all transform hover:-translate-y-1 hover:shadow-xl">
+        Mulai Petualangan <i class="ml-2 fas fa-arrow-down"></i>
+      </a>
+    </div>
+
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10">
+      <div class="floating text-white text-4xl">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tentang Trip Camping -->
+  <section id="info" class="py-20 bg-white">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-center text-gray-800 mb-4 gradient-text" data-aos="fade-up">Tentang Trip Camping</h2>
+      <div class="w-24 h-2 bg-green-500 mx-auto mb-12 rounded-full" data-aos="fade-up" data-aos-delay="100"></div>
+
+      <p class="text-center max-w-3xl mx-auto text-gray-600 text-lg mb-16 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+        Trip Camping KMH adalah pengalaman berkemah di Taman Nasional Kerinci Seblat yang dirancang untuk menikmati keindahan alam sambil mendukung ekowisata. Nikmati malam di bawah bintang dengan fasilitas ramah lingkungan yang disediakan oleh KMH.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="stat-card bg-white shadow-lg rounded-2xl p-8 text-center border border-gray-100" data-aos="fade-up" data-aos-delay="300">
+          <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-100 text-green-600 mb-6">
+            <i class="fas fa-campground text-3xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-green-600 mb-2">Fasilitas Lengkap</h3>
+          <p class="text-gray-600">Tenda, peralatan masak, dan panduan lokal disediakan</p>
+        </div>
+
+        <div class="stat-card bg-white shadow-lg rounded-2xl p-8 text-center border border-gray-100" data-aos="fade-up" data-aos-delay="400">
+          <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-100 text-green-600 mb-6">
+            <i class="fas fa-tree text-3xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-green-600 mb-2">Konservasi</h3>
+          <p class="text-gray-600">Camping ramah lingkungan di Taman Nasional Kerinci Seblat</p>
+        </div>
+
+        <div class="stat-card bg-white shadow-lg rounded-2xl p-8 text-center border border-gray-100" data-aos="fade-up" data-aos-delay="500">
+          <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-100 text-green-600 mb-6">
+            <i class="fas fa-leaf text-3xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-green-600 mb-2">KMH & Alam</h3>
+          <p class="text-gray-600">Promosi ekowisata berkelanjutan</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parallax Section -->
+  <section class="parallax py-32 flex items-center" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80');">
+    <div class="container text-center text-white">
+      <h2 class="text-4xl font-bold mb-6" data-aos="fade-up">Malam di Bawah Bintang</h2>
+      <p class="text-xl max-w-2xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="200">Rasakan ketenangan alam dan kebersamaan dalam trip camping yang tak terlupakan bersama KMH</p>
+    </div>
+  </section>
+
+  <!-- Galeri Foto -->
+  <section id="gallery" class="gallery-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Galeri Trip Camping</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Jelajahi momen seru dari trip camping bersama KMH</p>
+
+      <div class="gallery-grid">
+        <!-- Item 1 -->
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
+            alt="Camping KMH">
+          <div class="gallery-overlay">
+            <span class="gallery-year">2023</span>
+            <h3 class="gallery-title">Kemah di Hutan</h3>
+            <p class="gallery-desc">Momen berkemah di tengah hutan Taman Nasional Kerinci Seblat</p>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
+            alt="Api Unggun">
+          <div class="gallery-overlay">
+            <span class="gallery-year">2023</span>
+            <h3 class="gallery-title">Api Unggun</h3>
+            <p class="gallery-desc">Kebersamaan di sekitar api unggun di malam hari</p>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
+            alt="Sunrise Camping">
+          <div class="gallery-overlay">
+            <span class="gallery-year">2023</span>
+            <h3 class="gallery-title">Sunrise di Camp</h3>
+            <p class="gallery-desc">Pemandangan matahari terbit yang menakjubkan dari area camping</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="view-more" data-aos="fade-up" data-aos-delay="500">
+        <a href="/gallery" class="view-more-btn">Lihat Galeri Lainnya <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aktivitas & Sustainability -->
+  <section class="py-20 bg-white">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-center text-gray-800 mb-4 gradient-text" data-aos="fade-up">Aktivitas & Keberlanjutan</h2>
+      <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Temukan aktivitas seru dan komitmen keberlanjutan dalam Trip Camping KMH</p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+        <div class="activity-card bg-white p-8 rounded-2xl shadow-md border border-gray-100 text-center hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="200">
+          <div class="activity-icon inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 text-green-600 text-2xl mb-6">
+            <i class="fas fa-campground"></i>
+          </div>
+          <h3 class="font-bold text-xl mb-3">Berkemah</h3>
+          <p class="text-gray-600 text-sm">Nikmati malam di alam dengan tenda ramah lingkungan.</p>
+        </div>
+
+        <div class="activity-card bg-white p-8 rounded-2xl shadow-md border border-gray-100 text-center hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="300">
+          <div class="activity-icon inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 text-green-600 text-2xl mb-6">
+            <i class="fas fa-fire"></i>
+          </div>
+          <h3 class="font-bold text-xl mb-3">Api Unggun</h3>
+          <p class="text-gray-600 text-sm">Kebersamaan di sekitar api unggun dengan cerita dan lagu.</p>
+        </div>
+
+        <div class="activity-card bg-white p-8 rounded-2xl shadow-md border border-gray-100 text-center hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="400">
+          <div class="activity-icon inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 text-green-600 text-2xl mb-6">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <h3 class="font-bold text-xl mb-3">Ekowisata</h3>
+          <p class="text-gray-600 text-sm">Camping dengan prinsip minim jejak lingkungan.</p>
+        </div>
+
+        <div class="activity-card bg-white p-8 rounded-2xl shadow-md border border-gray-100 text-center hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="500">
+          <div class="activity-icon inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 text-green-600 text-2xl mb-6">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <h3 class="font-bold text-xl mb-3">Energi Hijau</h3>
+          <p class="text-gray-600 text-sm">Inspirasi energi berkelanjutan dari alam Kerinci.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section py-20 text-white text-center relative">
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="container relative z-10">
+      <h2 class="text-4xl font-bold mb-6" data-aos="fade-up">Trip Camping & KMH</h2>
+      <p class="mb-10 max-w-3xl mx-auto text-xl leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+        KMH mengajak Anda merasakan petualangan camping yang ramah lingkungan di Taman Nasional Kerinci Seblat. Mari jaga alam untuk generasi mendatang.
+      </p>
+      <a href="/lingkungan" class="inline-block bg-white text-green-600 px-8 py-4 rounded-xl font-medium shadow-lg hover:bg-gray-100 transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="400">
+        Jelajahi Program CSR KMH <i class="ml-2 fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+  
+  <div id="footer-container"></div>
+    <script src="/main.js"></script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 1000,
+        once: true,
+        easing: 'ease-out-back'
+      });
+    });
+  </script>
+</body>
+</html>

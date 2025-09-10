@@ -17,18 +17,14 @@ function setupNavbarDropdown() {
       { name: "", href: "#coming-soon" },
     ],
     traveling: [
-      { name: "Gunung Kerinci", href: "traveling/gunung-kerinci.html" },
-      { name: "Bukit Tinggi", href: "#bukit-tinggi" },
-      { name: "Air Terjun Telun", href: "#air-terjun" },
-      { name: "Danau Kaco", href: "#danau-kaco" },
-      { name: "Trip Camping", href: "#camping" },
+      { name: "Gunung Kerinci", href: "/traveling/gunung-kerinci.html" },
+      { name: "Danau Kaco", href: "/traveling/danau-kaco.html" },
+      { name: "Trip Camping", href: "/traveling/camping.html" },
     ],
     health: [
-      { name: "Yoga Pagi", href: "#yoga" },
-      { name: "Sit Up Challenge", href: "#situp" },
       { name: "Senam Sehat", href: "/health/senam.html" },
-      { name: "Jalan Pagi", href: "#jalan-pagi" },
-      { name: "Pola Makan Sehat", href: "#makanan-sehat" },
+      { name: "Jalan Pagi", href: "/health/jalan.html" },
+      { name: "Pola Makan Sehat", href: "/health/makan.html" },
     ],
     csr: [
       { name: "Lingkungan dan Kehutanan", href: "/csr/lingkungan.html" },
